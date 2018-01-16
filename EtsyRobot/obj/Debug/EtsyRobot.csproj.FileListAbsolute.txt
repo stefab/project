@@ -52,7 +52,6 @@ P:\var\EtsyRobot\EtsyRobot\bin\Debug\WebDriver.xml
 P:\var\EtsyRobot\EtsyRobot\bin\Debug\WebDriver.Support.xml
 P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.csprojResolveAssemblyReference.cache
 O:\my_projects\EtsyRobot\bin\Debug\chromedriver.exe
-O:\my_projects\EtsyRobot\bin\Debug\wires-0.6.0-win.exe
 O:\my_projects\EtsyRobot\bin\Debug\EtsyRobot.exe.config
 O:\my_projects\EtsyRobot\bin\Debug\EtsyRobot.exe
 O:\my_projects\EtsyRobot\bin\Debug\EtsyRobot.pdb

@@ -9,9 +9,13 @@ namespace EtsyRobot.Engine.WebSession
 {
 	internal class CustomFirefoxDriver : FirefoxDriver
 	{
-		public CustomFirefoxDriver(FirefoxBinary binary, FirefoxProfile profile, TimeSpan commandTimeout)
-			: base(binary, profile, commandTimeout)
+		public CustomFirefoxDriver(FirefoxBinary binary, FirefoxProfile profile)
+			: base(binary, profile)
 		{}
+		public CustomFirefoxDriver(FirefoxDriverService service, FirefoxOptions opt, TimeSpan commandTimeout)
+			: base(service, opt, commandTimeout)
+		{}
+
 
 		protected override void Dispose(bool disposing)
 		{

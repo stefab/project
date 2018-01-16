@@ -46,15 +46,20 @@ namespace EtsyRobot.Engine.WebSession
 
 		static private IBrowserSession CreateFirefoxAdapter(BrowserSettings settings)
 		{
-			var profile = new FirefoxProfile();
+			var profile = new FirefoxProfile("O:\\my_projects\\profile.moz");
 			profile.SetPreference("dom.max_chrome_script_run_time", settings.CommandTimeout);
 			profile.SetPreference("dom.max_script_run_time", settings.CommandTimeout);
-			//profile.SetPreference("xpinstall.signatures.required", false);
+            profile.DeleteAfterUse = false;
+            //profile.SetPreference("xpinstall.signatures.required", false);
 			if (settings.PluginFileName != null)
 			{
 				profile.AddExtension(settings.PluginFileName);
 			}
-			var webDriver = new CustomFirefoxDriver(new FirefoxBinary(), profile, TimeSpan.FromSeconds(settings.CommandTimeout));
+            var  cc = TimeSpan.FromSeconds(settings.CommandTimeout);
+            FirefoxOptions opt = new FirefoxOptions();
+            opt.Profile = profile;
+            var webDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(), opt, TimeSpan.FromSeconds(settings.CommandTimeout));
+            //var webDriver = new CustomFirefoxDriver(new FirefoxBinary(), profile);
 			return new DefaultBrowserSession(webDriver).Configure(settings);
 		}
 

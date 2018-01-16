@@ -55,7 +55,7 @@ namespace EtsyRobot.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http;//obkom")]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://obkom.net.ua")]
         public string RemoteWebDriverServerUrl {
             get {
                 return ((string)(this["RemoteWebDriverServerUrl"]));
@@ -64,7 +64,7 @@ namespace EtsyRobot.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Chrome")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Firefox")]
         public global::EtsyRobot.Engine.WebSession.BrowserType BrowserType {
             get {
                 return ((global::EtsyRobot.Engine.WebSession.BrowserType)(this["BrowserType"]));

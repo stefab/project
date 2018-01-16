@@ -12,10 +12,10 @@
       <Value Profile="(Default)">120</Value>
     </Setting>
     <Setting Name="RemoteWebDriverServerUrl" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">http;//obkom</Value>
+      <Value Profile="(Default)">http://obkom.net.ua</Value>
     </Setting>
     <Setting Name="BrowserType" Type="EtsyRobot.Engine.WebSession.BrowserType" Scope="Application">
-      <Value Profile="(Default)">Chrome</Value>
+      <Value Profile="(Default)">Firefox</Value>
     </Setting>
     <Setting Name="StoragePath" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
