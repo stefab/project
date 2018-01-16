@@ -41,12 +41,15 @@ namespace EtsyRobot.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("120")]
         public int RemoteCommandTimeout {
             get {
                 return ((int)(this["RemoteCommandTimeout"]));
+            }
+            set {
+                this["RemoteCommandTimeout"] = value;
             }
         }
         
