@@ -80,7 +80,8 @@ namespace EtsyRobot.Engine.WebSession
 			this._webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(settings.PageLoadTimeout);
 
             //TODO: This setting does not work. Script timeout should be configured via browser-specific settings.
-            this._webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(settings.CommandTimeout); //SetScriptTimeout(TimeSpan.FromSeconds(settings.CommandTimeout));
+            this._webDriver.Manage().Timeouts().AsynchronousJavaScript = TimeSpan.FromSeconds(settings.CommandTimeout); 
+            //SetScriptTimeout(TimeSpan.FromSeconds(settings.CommandTimeout)); // old
             Console.WriteLine("Driver settings: page load timeout {0}, ScriptTimeout {1}.",  settings.PageLoadTimeout, settings.CommandTimeout);           
 		}
 
@@ -250,63 +251,10 @@ namespace EtsyRobot.Engine.WebSession
 				throw;
 			}
 		}
-
-		static private Node BuildNode(NodeInfo nodeInfo)
-		{
-			return new Node
-				{
-					Selector = nodeInfo.Selector,
-					Location = new Point(nodeInfo.Left, nodeInfo.Top),
-					Size = new Size(nodeInfo.Width, nodeInfo.Height),
-					ContentUrl = nodeInfo.ContentUrl,
-                    data_id = nodeInfo.dt
-				};
-		}
-
-		static private AdZoneNode BuildAdZoneNode(_ShowContentFrame nodeInfo)
-		{
-			return new AdZoneNode
-				{
-                    Displayed = nodeInfo.Displayed,
-                    Width = nodeInfo.Width,
-                    Height = nodeInfo.Height,
-                    SafeWidth = nodeInfo.SafeWidth,
-                    SafeHeight = nodeInfo.SafeHeight,
-                    Advert = nodeInfo.Advert,
-                    ta_divid = nodeInfo.ta_divid,
-                    data_id = nodeInfo.data_id
-        		};
-		}
-
 		static private readonly TraceSource _tracer = new TraceSource("Engine.Scraping", SourceLevels.All);
 
 		private readonly IWebDriver _webDriver;
 		private readonly IJavaScriptExecutor _scriptExecutor;
 
-		#region Nested type: NodeInfo
-		
-        protected sealed class NodeInfo
-		{
-			[JsonProperty("p")]
-			public string Selector { get; set; }
-
-			[JsonProperty("y")]
-			public int Top { get; set; }
-
-			[JsonProperty("x")]
-			public int Left { get; set; }
-
-			[JsonProperty("h")]
-			public int Height { get; set; }
-
-			[JsonProperty("w")]
-			public int Width { get; set; }
-
-			[JsonProperty("u")]
-			public string ContentUrl { get; set; }
-			[JsonProperty("dt")]
-			public int dt { get; set; }
-		}
-		#endregion
 	}
 }

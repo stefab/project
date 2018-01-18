@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EtsyRobot.Worker;
 using EtsyRobot.Storage.Model;
+using System.Text.RegularExpressions;
 
 namespace EtsyRobot
 {
@@ -21,6 +22,25 @@ namespace EtsyRobot
 
         private void btnTestClick(object sender, EventArgs e)
         {
+            String pattern = @"(post.*?(?<gr_post>\d+).*?(favorite|fave?).*?(?<gr_fave>\d+))|" +
+                             @"((favorite|fave?).*?(?<gr_fave>\d+).*?post.*?(?<gr_post>\d+))";
+
+            String data =   "Post 134, " +
+                            "Fave 50 above You. Great promo game! " +
+                            "Favorite 137,  " +
+                            "Posting 54 above You. Great promo game!";
+
+            Regex rgx = new Regex(pattern, RegexOptions.IgnoreCase | RegexOptions.Singleline | RegexOptions.Compiled);
+            MatchCollection matches = rgx.Matches(data);
+            foreach (Match match in matches)
+            {
+                GroupCollection groups = match.Groups;
+                Console.WriteLine("'{0}' repeated at positions {1} and {2}",
+                                  groups["gr_post"].Value,
+                                  groups["gr_fave"].Value,
+                                  groups[0].Index);
+            }
+
             GameHandler handler = new GameHandler(true); //JobHandler.CreateGameHandler();
             Job job =  Job.Create("http://obkom.net.ua");
             handler.Handle(job);

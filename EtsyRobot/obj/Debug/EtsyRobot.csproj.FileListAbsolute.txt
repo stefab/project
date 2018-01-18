@@ -31,7 +31,6 @@ P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.MainFrm.resources
 P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.Properties.Resources.resources
 P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.csproj.GenerateResource.Cache
 P:\var\EtsyRobot\EtsyRobot\bin\Debug\chromedriver.exe
-P:\var\EtsyRobot\EtsyRobot\bin\Debug\wires-0.6.0-win.exe
 P:\var\EtsyRobot\EtsyRobot\bin\Debug\EtsyRobot.exe
 P:\var\EtsyRobot\EtsyRobot\bin\Debug\EtsyRobot.pdb
 P:\var\EtsyRobot\EtsyRobot\bin\Debug\EntityFramework.dll

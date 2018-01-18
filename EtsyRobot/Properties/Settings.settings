@@ -23,5 +23,11 @@
     <Setting Name="Setting" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="SiteUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.etsy.com/</Value>
+    </Setting>
+    <Setting Name="TeamsUrl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://www.etsy.com/teams/?show_panel=true</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -38,7 +38,7 @@ namespace EtsyRobot.Worker
                     session = settings is RemoteBrowserSettings
                                               ? factory.CreateRemote((RemoteBrowserSettings)settings)
                                               : factory.Create(settings);
-                    content = session.Scrape(new Uri(job.Url), this._isReferenceScraping);
+                    //content = session.Scrape(new Uri(job.Url), this._isReferenceScraping);
                 }
                 finally
                 {

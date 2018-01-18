@@ -88,5 +88,29 @@ namespace EtsyRobot.Properties {
                 return ((string)(this["Setting"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.etsy.com/")]
+        public string SiteUrl {
+            get {
+                return ((string)(this["SiteUrl"]));
+            }
+            set {
+                this["SiteUrl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://www.etsy.com/teams/?show_panel=true")]
+        public string TeamsUrl {
+            get {
+                return ((string)(this["TeamsUrl"]));
+            }
+            set {
+                this["TeamsUrl"] = value;
+            }
+        }
     }
 }
