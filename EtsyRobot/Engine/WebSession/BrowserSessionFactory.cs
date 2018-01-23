@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 namespace EtsyRobot.Engine.WebSession
 {
-	public sealed class BrowserSessionFactory
+	internal sealed class BrowserSessionFactory
 	{
 		public IBrowserSession Create(BrowserSettings settings)
 		{

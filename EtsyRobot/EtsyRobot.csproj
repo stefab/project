@@ -97,8 +97,6 @@
     <Compile Include="Engine\PageModel\IFilterRuleProvider.cs" />
     <Compile Include="Engine\PageModel\Node.cs" />
     <Compile Include="Engine\PageModel\PageContent.cs" />
-    <Compile Include="Engine\PageModel\RuleProviders\EasyList\EasyListFilterRule.cs" />
-    <Compile Include="Engine\PageModel\RuleProviders\EasyList\EasyListProvider.cs" />
     <Compile Include="Engine\PageModel\RuleProviders\PrivDog\PrivDogFilterRule.cs" />
     <Compile Include="Engine\PageModel\RuleProviders\PrivDog\PrivDogProvider.cs" />
     <Compile Include="Engine\WebSession\AdsFinder\AdsFinder.cs" />
@@ -112,6 +110,9 @@
     <Compile Include="Engine\WebSession\CustomChromeDriver.cs" />
     <Compile Include="Engine\WebSession\CustomFirefoxDriver.cs" />
     <Compile Include="Engine\WebSession\DefaultBrowserSession.cs" />
+    <Compile Include="Engine\WebSession\EtsyUtils\BrowserSessionHolder.cs" />
+    <Compile Include="Engine\WebSession\EtsyUtils\EtsyAuthentication.cs" />
+    <Compile Include="Engine\WebSession\EtsyUtils\EtsyGameStrategy.cs" />
     <Compile Include="Engine\WebSession\IBrowserSession.cs" />
     <Compile Include="Engine\WebSession\ImageUtils.cs" />
     <Compile Include="Engine\WebSession\RemoteBrowserSettings.cs" />

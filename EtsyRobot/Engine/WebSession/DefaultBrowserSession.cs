@@ -16,6 +16,7 @@ using System.Collections.Specialized;
 using System.Collections.ObjectModel;
 
 using System.IO;
+using EtsyRobot.Engine.WebSession.EtsyUtils;
 
 namespace EtsyRobot.Engine.WebSession
 {
@@ -33,6 +34,36 @@ namespace EtsyRobot.Engine.WebSession
 		{
 			this._webDriver.Quit();
 		}
+        public void ProcessPage(Uri uri, EtsyStrategy strategy)
+        {
+			DateTime startedAt = DateTime.Now;
+			try
+			{
+                Thread.Sleep(100);
+                this._webDriver.Url = uri.ToString();
+                // wait page fully load
+                Thread.Sleep(1000);
+			}
+			catch (WebDriverTimeoutException)
+			{
+				// Assuming is was enough time to load a page. Page is scraped "as is".
+			}
+            _tracer.TraceEvent(TraceEventType.Verbose, 0, "Page {0} opened in {1:f3} seconds.", uri,
+			                   (DateTime.Now - startedAt).TotalSeconds);
+
+			this.InjectHelperScripts();
+
+            //PageContent content = this.ScrapeContent(isReferenceScraping);
+            strategy.init(this);
+            strategy.process();
+            _tracer.TraceEvent(TraceEventType.Verbose, 0, "Page content has been scaped.");
+
+			Image screenshot = this.GetScreenshot();
+			_tracer.TraceEvent(TraceEventType.Verbose, 0, "Screenshot image has taken.");
+			//content.Screenshot = screenshot;
+			//return content;
+        }
+
 
         public PageContent Scrape(Uri uri, bool isReferenceScraping = true)
 		{
@@ -231,7 +262,7 @@ namespace EtsyRobot.Engine.WebSession
 
 
 
-		protected IWebDriver WebDriver
+		public IWebDriver WebDriver
 		{
 			get { return this._webDriver; }
 		}

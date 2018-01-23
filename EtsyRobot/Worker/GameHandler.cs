@@ -8,6 +8,7 @@ using EtsyRobot.Storage;
 using System.Threading;
 using EtsyRobot.Engine.WebSession;
 using EtsyRobot.Storage.Model;
+using EtsyRobot.Engine.WebSession.EtsyUtils;
 
 namespace EtsyRobot.Worker
 {
@@ -39,6 +40,8 @@ namespace EtsyRobot.Worker
                                               ? factory.CreateRemote((RemoteBrowserSettings)settings)
                                               : factory.Create(settings);
                     //content = session.Scrape(new Uri(job.Url), this._isReferenceScraping);
+                    EtsyStrategy strategy = new EtsyStrategy();
+                    session.ProcessPage(new Uri(job.Url), strategy);
                 }
                 finally
                 {
