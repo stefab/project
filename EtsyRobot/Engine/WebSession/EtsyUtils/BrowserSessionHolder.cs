@@ -14,7 +14,10 @@ namespace EtsyRobot.Engine.WebSession.EtsyUtils
         private IWebDriver _webDriver;
         public BrowserSessionHolder()
         {
-
+        }
+        public BrowserSessionHolder(DefaultBrowserSession session)
+        {
+            init(session);
         }
         public virtual void init(DefaultBrowserSession session)
         {

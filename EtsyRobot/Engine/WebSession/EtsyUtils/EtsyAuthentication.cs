@@ -8,9 +8,8 @@ namespace EtsyRobot.Engine.WebSession.EtsyUtils
 {
     class EtsyAuthentication :  BrowserSessionHolder
     {
-        public EtsyAuthentication(DefaultBrowserSession session) : base()
+        public EtsyAuthentication(DefaultBrowserSession session) : base(session)
         {
-            base.init(session);
         }
 
         string Login
@@ -24,8 +23,10 @@ namespace EtsyRobot.Engine.WebSession.EtsyUtils
             set { _password = value; }
         }
 
-        public bool signIn()
+        public bool signIn(string login, string password)
         {
+            Login = login;
+            Password = password;
             return true;
         }
         public bool isLoggedIn()

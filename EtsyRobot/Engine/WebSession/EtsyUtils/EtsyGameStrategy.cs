@@ -15,6 +15,22 @@ namespace EtsyRobot.Engine.WebSession.EtsyUtils
         {
             base.init(session);
         }
-        public virtual void process() { }
+        public virtual void process(DefaultBrowserSession session) { init(session); }
+    }
+
+    internal class EtsyGameStrategy : EtsyStrategy
+    {
+        public EtsyGameStrategy() : base()
+        {
+        }
+        public virtual void process(DefaultBrowserSession session)
+        {
+            init(session);
+            EtsyAuthentication auth = new EtsyAuthentication(session);
+            if (auth.isLoggedIn())
+            {
+                auth.signIn("alla", "password");
+            }
+        }
     }
 }

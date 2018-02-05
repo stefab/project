@@ -54,8 +54,7 @@ namespace EtsyRobot.Engine.WebSession
 			this.InjectHelperScripts();
 
             //PageContent content = this.ScrapeContent(isReferenceScraping);
-            strategy.init(this);
-            strategy.process();
+            strategy.process(this);
             _tracer.TraceEvent(TraceEventType.Verbose, 0, "Page content has been scaped.");
 
 			Image screenshot = this.GetScreenshot();
