@@ -93,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Engine\PageModel\AdContentChecker.cs" />
+    <Compile Include="Engine\JobModel\JobResult.cs" />
     <Compile Include="Engine\PageModel\IFilterRule.cs" />
     <Compile Include="Engine\PageModel\IFilterRuleProvider.cs" />
     <Compile Include="Engine\PageModel\Node.cs" />
