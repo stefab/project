@@ -3,34 +3,66 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EtsyRobot.Storage.Model;
+using System.Threading;
+using EtsyRobot.Engine.JobModel;
 
 namespace EtsyRobot.Engine.WebSession.EtsyUtils
 {
     internal class EtsyStrategy :  BrowserSessionHolder 
     {
-        public EtsyStrategy() : base()
+        private Job m_job;
+        public Job job
         {
+            get { return m_job; }
+        }
+        public EtsyStrategy(Job job) : base()
+        {
+            m_job = job;
         }
         public void init(DefaultBrowserSession session)
         {
             base.init(session);
         }
-        public virtual void process(DefaultBrowserSession session) { init(session); }
+        public virtual GameResult process(DefaultBrowserSession session)
+        {
+            init(session);
+            return null;
+        }
     }
 
     internal class EtsyGameStrategy : EtsyStrategy
     {
-        public EtsyGameStrategy() : base()
+        public EtsyGameStrategy(Job job) : base(job)
         {
         }
-        public virtual void process(DefaultBrowserSession session)
+        public override GameResult process(DefaultBrowserSession session)
         {
-            init(session);
+            base.init(session);
+            GameResult result = new GameResult();
+
+            session.LoadPage(new Uri(job.Url));
+            //Thread.Sleep(10000);
+            session.InjectHelperScripts();
+            
             EtsyAuthentication auth = new EtsyAuthentication(session);
-            if (auth.isLoggedIn())
+            if (!auth.isLoggedIn())
             {
-                auth.signIn("alla", "password");
+                if(auth.signIn(job.User, job.Password))
+                {
+                    if (auth.isLoggedIn())
+                    {
+
+                    }
+                }
+                else
+                {
+
+                }
+
             }
+
+            return result;
         }
     }
 }

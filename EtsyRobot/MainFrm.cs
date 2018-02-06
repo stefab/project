@@ -42,7 +42,9 @@ namespace EtsyRobot
             }
 
             GameHandler handler = new GameHandler(true); //JobHandler.CreateGameHandler();
-            Job job =  Job.Create("http://obkom.net.ua");
+            Job job =  Job.Create("https://www.etsy.com/teams");
+            job.User = @"Alegraflowers";
+            job.Password = @"konfetka39";
             handler.Handle(job);
         }
     }

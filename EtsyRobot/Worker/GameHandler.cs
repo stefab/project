@@ -40,8 +40,10 @@ namespace EtsyRobot.Worker
                                               ? factory.CreateRemote((RemoteBrowserSettings)settings)
                                               : factory.Create(settings);
                     //content = session.Scrape(new Uri(job.Url), this._isReferenceScraping);
-                    EtsyStrategy strategy = new EtsyStrategy();
-                    session.ProcessPage(new Uri(job.Url), strategy);
+                    EtsyStrategy strategy = new EtsyGameStrategy(job);
+                    session.ProcessJob(strategy);
+                    //strategy.process()
+
                 }
                 finally
                 {

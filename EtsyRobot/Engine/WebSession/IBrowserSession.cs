@@ -7,7 +7,7 @@ namespace EtsyRobot.Engine.WebSession
 {
 	internal interface IBrowserSession : IDisposable
 	{
-        PageContent Scrape(Uri uri, bool isReferenceScraping = true);
-        void ProcessPage(Uri uri, EtsyStrategy strategy);
+        //PageContent Scrape(Uri uri, bool isReferenceScraping = true);
+        void ProcessJob(EtsyStrategy strategy);
 	}
 }

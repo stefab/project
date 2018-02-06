@@ -20,7 +20,7 @@ namespace EtsyRobot.Engine.WebSession
             base.ConfigureWindowSize(settings);
 		}
 
-		protected override Image GetScreenshot()
+		public override Image GetScreenshot()
 		{
 			//Thread.Sleep(2000);
 			//return this.GetFullScreenshot();

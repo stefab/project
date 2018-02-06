@@ -17,6 +17,8 @@ using System.Collections.ObjectModel;
 
 using System.IO;
 using EtsyRobot.Engine.WebSession.EtsyUtils;
+using System.Linq;
+
 
 namespace EtsyRobot.Engine.WebSession
 {
@@ -34,13 +36,16 @@ namespace EtsyRobot.Engine.WebSession
 		{
 			this._webDriver.Quit();
 		}
-        public void ProcessPage(Uri uri, EtsyStrategy strategy)
+
+        public void LoadPage(Uri uri)
         {
-			DateTime startedAt = DateTime.Now;
-			try
+            DateTime startedAt = DateTime.Now;
+            try
 			{
                 Thread.Sleep(100);
                 this._webDriver.Url = uri.ToString();
+                _tracer.TraceEvent(TraceEventType.Verbose, 0, "Page {0} opened in {1:f3} seconds.", uri,
+                                   (DateTime.Now - startedAt).TotalSeconds);
                 // wait page fully load
                 Thread.Sleep(1000);
 			}
@@ -48,52 +53,47 @@ namespace EtsyRobot.Engine.WebSession
 			{
 				// Assuming is was enough time to load a page. Page is scraped "as is".
 			}
-            _tracer.TraceEvent(TraceEventType.Verbose, 0, "Page {0} opened in {1:f3} seconds.", uri,
-			                   (DateTime.Now - startedAt).TotalSeconds);
+        }
 
-			this.InjectHelperScripts();
-
+        public void ProcessJob(EtsyStrategy strategy)
+        {
+            DateTime startedAt = DateTime.Now;
             //PageContent content = this.ScrapeContent(isReferenceScraping);
             strategy.process(this);
             _tracer.TraceEvent(TraceEventType.Verbose, 0, "Page content has been scaped.");
-
-			Image screenshot = this.GetScreenshot();
-			_tracer.TraceEvent(TraceEventType.Verbose, 0, "Screenshot image has taken.");
-			//content.Screenshot = screenshot;
-			//return content;
         }
 
 
-        public PageContent Scrape(Uri uri, bool isReferenceScraping = true)
-		{
-			DateTime startedAt = DateTime.Now;
-			try
-			{
-                Thread.Sleep(100);
-                this._webDriver.Url = uri.ToString();
-                // wait page fully load
-                Thread.Sleep(1000);
-			}
-			catch (WebDriverTimeoutException)
-			{
-				// Assuming is was enough time to load a page. Page is scraped "as is".
-			}
-			_tracer.TraceEvent(TraceEventType.Verbose, 0, "Page {0} opened in {1:f3} seconds.", uri,
-			                   (DateTime.Now - startedAt).TotalSeconds);
+        //public PageContent Scrape(Uri uri, bool isReferenceScraping = true)
+        //{
+        //	DateTime startedAt = DateTime.Now;
+        //	try
+        //	{
+        //              Thread.Sleep(100);
+        //              this._webDriver.Url = uri.ToString();
+        //              // wait page fully load
+        //              Thread.Sleep(1000);
+        //	}
+        //	catch (WebDriverTimeoutException)
+        //	{
+        //		// Assuming is was enough time to load a page. Page is scraped "as is".
+        //	}
+        //	_tracer.TraceEvent(TraceEventType.Verbose, 0, "Page {0} opened in {1:f3} seconds.", uri,
+        //	                   (DateTime.Now - startedAt).TotalSeconds);
 
-			this.InjectHelperScripts();
+        //	this.InjectHelperScripts();
 
-			PageContent content = this.ScrapeContent(isReferenceScraping);
-			_tracer.TraceEvent(TraceEventType.Verbose, 0, "Page content has been scaped.");
+        //	PageContent content = this.ScrapeContent(isReferenceScraping);
+        //	_tracer.TraceEvent(TraceEventType.Verbose, 0, "Page content has been scaped.");
 
-			Image screenshot = this.GetScreenshot();
-			_tracer.TraceEvent(TraceEventType.Verbose, 0, "Screenshot image has taken.");
-			content.Screenshot = screenshot;
-			return content;
-		}
-		#endregion
+        //	Image screenshot = this.GetScreenshot();
+        //	_tracer.TraceEvent(TraceEventType.Verbose, 0, "Screenshot image has taken.");
+        //	content.Screenshot = screenshot;
+        //	return content;
+        //}
+        #endregion
 
-		public DefaultBrowserSession Configure(BrowserSettings settings)
+        public DefaultBrowserSession Configure(BrowserSettings settings)
 		{
 			this.ConfigureWindowSize(settings);
 			this.ConfigureTimeout(settings);
@@ -115,13 +115,30 @@ namespace EtsyRobot.Engine.WebSession
             Console.WriteLine("Driver settings: page load timeout {0}, ScriptTimeout {1}.",  settings.PageLoadTimeout, settings.CommandTimeout);           
 		}
 
-		protected virtual Image GetScreenshot()
+		public virtual Image GetScreenshot()
 		{
 			Screenshot screenshot = this._webDriver.TakeScreenshot();
 			return ImageUtils.BytesToImage(screenshot.AsByteArray);
 		}
 
-        protected int[,] createLayoutTable(int height, int width) {
+        public ReadOnlyCollection<IWebElement> FindElements(By by, bool waitVisible=true, int attepms=1, double period=1.0)
+        {
+            ReadOnlyCollection<IWebElement> elements = null;
+            bool flFind = false;
+            do
+            {
+                --attepms;
+                elements = _webDriver.FindElements(by);
+                elements.FirstOrDefault();
+                flFind = (elements.Count > 0) && (!waitVisible || elements.FirstOrDefault().Displayed);
+                if (!flFind)
+                    Thread.Sleep(TimeSpan.FromSeconds(period));
+            }
+            while (!flFind && attepms > 0 );
+            return elements;
+        }
+
+    protected int[,] createLayoutTable(int height, int width) {
             DateTime startedAt = DateTime.Now;
             int[,] layout = new int[height, width];
 			if (true) {
@@ -259,14 +276,12 @@ namespace EtsyRobot.Engine.WebSession
 
         }
 
-
-
 		public IWebDriver WebDriver
 		{
 			get { return this._webDriver; }
 		}
 
-		private void InjectHelperScripts()
+		public void InjectHelperScripts()
 		{}
 
 		static private T Deserialize<T>(string json)
@@ -281,7 +296,7 @@ namespace EtsyRobot.Engine.WebSession
 				throw;
 			}
 		}
-		static private readonly TraceSource _tracer = new TraceSource("Engine.Scraping", SourceLevels.All);
+		static private readonly TraceSource _tracer = new TraceSource("EtsyRobot", SourceLevels.All);
 
 		private readonly IWebDriver _webDriver;
 		private readonly IJavaScriptExecutor _scriptExecutor;
