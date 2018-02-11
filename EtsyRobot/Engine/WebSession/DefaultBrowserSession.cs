@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.Extensions;
 
-using EtsyRobot.Engine.PageModel;
+using EtsyRobot.Engine.JobModel;
 using EtsyRobot.Properties;
 using EtsyRobot.Engine.WebSession.AdsFinder;
 using System.Threading;
@@ -47,7 +47,7 @@ namespace EtsyRobot.Engine.WebSession
                 _tracer.TraceEvent(TraceEventType.Verbose, 0, "Page {0} opened in {1:f3} seconds.", uri,
                                    (DateTime.Now - startedAt).TotalSeconds);
                 // wait page fully load
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
 			}
 			catch (WebDriverTimeoutException)
 			{
@@ -59,7 +59,7 @@ namespace EtsyRobot.Engine.WebSession
         {
             DateTime startedAt = DateTime.Now;
             //PageContent content = this.ScrapeContent(isReferenceScraping);
-            strategy.process(this);
+            GameResult result = strategy.process(this);
             _tracer.TraceEvent(TraceEventType.Verbose, 0, "Page content has been scaped.");
         }
 
@@ -191,8 +191,8 @@ namespace EtsyRobot.Engine.WebSession
             return layout;
         }
 
-        protected virtual PageContent ScrapeContent(bool isReferenceScraping)
-		{
+ //       protected virtual PageContent ScrapeContent(bool isReferenceScraping)
+//		{
 
    //         dynamic viewport = this._scriptExecutor.ExecuteScript(Resources.ScrapeMetadata + "\n" +
 			//                                                      "return window.privDogAuto.getViewport();");
@@ -233,13 +233,13 @@ namespace EtsyRobot.Engine.WebSession
    //             }
    //         }
 
-            return new PageContent { };
+  //          return new PageContent { };
 				//{
 				//	Nodes = nodes.ConvertAll(BuildNode).ToArray(),
 				//	Layout = layout,
                 //  AdZoneNodes = _ads.ConvertAll(BuildAdZoneNode).ToArray() 
 				//};
-		}
+	//	}
 
 
         protected void framesScrapeContent(ISearchContext topWebElement, int lvl = 0)

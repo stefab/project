@@ -29,6 +29,7 @@ namespace EtsyRobot.Engine.WebSession.EtsyUtils
             init(session);
             return null;
         }
+
     }
 
     internal class EtsyGameStrategy : EtsyStrategy
