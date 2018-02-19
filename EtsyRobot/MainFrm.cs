@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using EtsyRobot.Worker;
 using EtsyRobot.Storage.Model;
 using System.Text.RegularExpressions;
+using EtsyRobot.Storage.Infrastructure;
 
 namespace EtsyRobot
 {
@@ -22,6 +23,13 @@ namespace EtsyRobot
 
         private void btnTestClick(object sender, EventArgs e)
         {
+            using (var db = new CoreContext())
+            {
+                db.Database.Initialize(true);
+                db.Jobs.Add(Job.Create("http://cxxcxcx"));
+                db.SaveChanges();
+            }
+
             String pattern = @"(post.*?(?<gr_post>\d+).*?(favorite|fave?).*?(?<gr_fave>\d+))|" +
                              @"((favorite|fave?).*?(?<gr_fave>\d+).*?post.*?(?<gr_post>\d+))";
 
@@ -41,9 +49,13 @@ namespace EtsyRobot
                                   groups[0].Index);
             }
 
+            // init db
+            // Data Source="P:\var\EtsyRobot\etsy_robot.db;Version=3;Journal Mode=Persist;"
+
+
             GameHandler handler = new GameHandler(true); //JobHandler.CreateGameHandler();
             Job job =  Job.Create("https://www.etsy.com/teams");
-            job.User = @"Alegraflowers";
+            job.EtsyUser = @"Alegraflowers";
             job.Password = @"konfetka39";
             handler.Handle(job);
         }
