@@ -80,3 +80,4 @@ P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.Properties.Resources.resources
 P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.csproj.GenerateResource.Cache
 P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.exe
 P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.pdb
+P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.csprojResolveAssemblyReference.cache

@@ -113,7 +113,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccess.cs" />
     <Compile Include="Engine\PageModel\AdContentChecker.cs" />
     <Compile Include="Engine\JobModel\JobResult.cs" />
     <Compile Include="Engine\PageModel\IFilterRule.cs" />

@@ -22,7 +22,6 @@ namespace EtsyRobot.Storage.Infrastructure
 		{
 			modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 			modelBuilder.Configurations.Add(new JobTypeConfiguration());
-
 			modelBuilder.Ignore<JobWithContent>();
 		}
 
