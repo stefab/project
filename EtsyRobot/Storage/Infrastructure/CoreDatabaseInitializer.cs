@@ -2,12 +2,12 @@
 using System.Data.Entity;
 
 using EtsyRobot.Storage.Model;
-using EtsyRobot.Storage.Migrations;
+using EtsyRobot.Migrations;
 
 namespace EtsyRobot.Storage.Infrastructure
 {
-	//internal class CoreDatabaseInitializer : DropCreateDatabaseIfModelChanges<CoreContext>
-    public class CoreDatabaseInitializer : MigrateDatabaseToLatestVersion<CoreContext, Configuration>
+    //internal class CoreDatabaseInitializer : DropCreateDatabaseIfModelChanges<CoreContext>
+    internal class CoreDatabaseInitializer : MigrateDatabaseToLatestVersion<CoreContext, Configuration>
 	{
         //protected override void Seed(CoreContext context)
         //{

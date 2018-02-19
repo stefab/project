@@ -65,7 +65,8 @@ namespace EtsyRobot.Storage.Model
 		{
 			this.Steps = new HashSet<JobStep>();
 		}
-        public string User { get; set; }
+        public string EtsyUser2 { get; set; }
+        public string EtsyUser { get; set; }
         public string Password  { get; set; }
 
 		public int ID { get; set; }

@@ -61,6 +61,7 @@ namespace EtsyRobot.Engine.WebSession
             //PageContent content = this.ScrapeContent(isReferenceScraping);
             GameResult result = strategy.process(this);
             _tracer.TraceEvent(TraceEventType.Verbose, 0, "Page content has been scaped.");
+            _webDriver.Quit();
         }
 
 

@@ -49,7 +49,7 @@ namespace EtsyRobot.Engine.WebSession.EtsyUtils
             EtsyAuthentication auth = new EtsyAuthentication(session);
             if (!auth.isLoggedIn())
             {
-                if(auth.signIn(job.User, job.Password))
+                if(auth.signIn(job.EtsyUser, job.Password))
                 {
                     if (auth.isLoggedIn())
                     {

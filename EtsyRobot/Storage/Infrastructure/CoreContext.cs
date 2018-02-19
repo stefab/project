@@ -6,12 +6,13 @@ using EtsyRobot.Storage.Model;
 
 namespace EtsyRobot.Storage.Infrastructure
 {
-	public class CoreContext : DbContext
+    public class CoreContext : DbContext
 	{
 		public CoreContext()
 			: base("CoreEntities")
-		{}
-
+		{
+            Database.SetInitializer<CoreContext>(new CoreDatabaseInitializer());
+        }
 		public DbSet<Job> Jobs { get; set; }
 		public DbSet<JobStep> JobSteps { get; set; }
 		public DbSet<Workload> Workloads { get; set; }
@@ -24,5 +25,6 @@ namespace EtsyRobot.Storage.Infrastructure
 
 			modelBuilder.Ignore<JobWithContent>();
 		}
-	}
+
+    }
 }

@@ -79,7 +79,7 @@ namespace EtsyRobot.Engine.WebSession.EtsyUtils
             //< a id = "sign-in" class="inline-overlay-trigger signin-header-action select-signin" rel="nofollow" href="/signin?ref=hdr&amp;from_action=signin-header&amp;from_page=https%3A%2F%2Fwww.etsy.com%2Fteams" title="Войти" role="button">
             // Sign in
             //</a>
-            ReadOnlyCollection<IWebElement> _curSign = session.WebDriver.FindElements(By.XPath("//*[@id=\"sign-in\"]"));
+            ReadOnlyCollection<IWebElement> _curSign = session.FindElements(By.XPath("//*[@id=\"sign-in\"]"));
             var elem = _curSign.FirstOrDefault();
             return elem == null ? true : !elem.Displayed;
         }

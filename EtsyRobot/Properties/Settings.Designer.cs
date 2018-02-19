@@ -64,7 +64,7 @@ namespace EtsyRobot.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Firefox")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Chrome")]
         public global::EtsyRobot.Engine.WebSession.BrowserType BrowserType {
             get {
                 return ((global::EtsyRobot.Engine.WebSession.BrowserType)(this["BrowserType"]));
@@ -110,6 +110,18 @@ namespace EtsyRobot.Properties {
             }
             set {
                 this["TeamsUrl"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("ff_etsy")]
+        public string FFProfile {
+            get {
+                return ((string)(this["FFProfile"]));
+            }
+            set {
+                this["FFProfile"] = value;
             }
         }
     }

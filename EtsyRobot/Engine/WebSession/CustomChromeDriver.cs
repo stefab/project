@@ -32,9 +32,9 @@ namespace EtsyRobot.Engine.WebSession
             return driver;
         }
 
-        protected CustomChromeDriver(ChromeOptions profile, TimeSpan commandTimeout) : base(profile)
+        protected CustomChromeDriver(ChromeOptions profile, TimeSpan commandTimeout) : base(ChromeDriverService.CreateDefaultService(), profile, commandTimeout)
         {
-            this.Manage().Timeouts().ImplicitWait = commandTimeout;// svt2 //SetScriptTimeout(commandTimeout);
+            //this.Manage().Timeouts().ImplicitWait = commandTimeout;// svt2 //SetScriptTimeout(commandTimeout);
         }
 
         public static IList<int> getProcessDrivers(int parentPid)

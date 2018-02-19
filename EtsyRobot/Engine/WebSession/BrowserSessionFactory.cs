@@ -7,6 +7,7 @@ using OpenQA.Selenium.Remote;
 using System.Reflection;
 using System.Management;
 using System.Diagnostics;
+using System.IO;
 
 //from selenium import webdriver;
 
@@ -46,9 +47,26 @@ namespace EtsyRobot.Engine.WebSession
 
 		static private IBrowserSession CreateFirefoxAdapter(BrowserSettings settings)
 		{
-			var profile = new FirefoxProfile("O:\\my_projects\\profile.moz");
+            string pathToCurrentUserProfiles = Environment.ExpandEnvironmentVariables("%TEMP%") + @"\ff_selenium_etsy3";
+            //string[] pathsToProfiles = Directory.GetDirectories(pathToCurrentUserProfiles, "*.default", SearchOption.TopDirectoryOnly);
+            //if (pathsToProfiles.Length != 0)
+            //{
+            //    FirefoxProfile profile = new FirefoxProfile(pathsToProfiles[0]);
+            //    profile.SetPreference("browser.tabs.loadInBackground", false); // set preferences you need
+            //    driver = new FirefoxDriver(new FirefoxBinary(), profile, serverTimeout);
+            //}
+            //FirefoxProfile profile = new FirefoxProfile(@"C:\Users\stefan\AppData\Roaming\Mozilla\Firefox\Profiles\ui906pgj.selenium_etsy", false); //"P:\\var\\ff_profile"
+                                                                                                                                                    //var profileManager = new FirefoxProfileManager();
+                                                                                                                                                    //FirefoxProfile profile = profileManager.GetProfile(@"ff_etsy");
+            FirefoxProfile profile = new FirefoxProfile(); 
+            if (profile == null)
+            {
+                profile = new FirefoxProfile();
+            }            
+            profile.SetPreference("browser.tabs.loadInBackground", false);
 			profile.SetPreference("dom.max_chrome_script_run_time", settings.CommandTimeout);
 			profile.SetPreference("dom.max_script_run_time", settings.CommandTimeout);
+            //profile.SetPreference("webdriver.firefox.profile", "ff_etsy");
             profile.DeleteAfterUse = false;
             //profile.SetPreference("xpinstall.signatures.required", false);
 			if (settings.PluginFileName != null)
@@ -56,11 +74,19 @@ namespace EtsyRobot.Engine.WebSession
 				profile.AddExtension(settings.PluginFileName);
 			}
             var  cc = TimeSpan.FromSeconds(settings.CommandTimeout);
+            
             FirefoxOptions opt = new FirefoxOptions();
-            opt.Profile = profile;
-            var webDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(), opt, TimeSpan.FromSeconds(settings.CommandTimeout));
-            //var webDriver = new CustomFirefoxDriver(new FirefoxBinary(), profile);
-			return new DefaultBrowserSession(webDriver).Configure(settings);
+            //opt.Profile = profile;
+            // To have geckodriver pick up an existing profile on the filesystem, you may pass ["-profile", "/path/to/profile"].
+            opt.AddArguments( new string[] { "-profile", pathToCurrentUserProfiles }); // @"P:\var\ff_profile"
+            //opt.AddArguments( new string[] { "-P", "ff_etsy" });
+            //opt.AddAdditionalCapability(CapabilityType.AcceptSslCertificates, true);
+            //opt.AddAdditionalCapability(CapabilityType.IsJavaScriptEnabled, true);
+            //opt.AddAdditionalCapability(CapabilityType.HasNativeEvents, true);
+            // opt.SetPreference("webdriver.firefox.profile", "ff_etsy");
+            //var webDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(), opt, TimeSpan.FromSeconds(settings.CommandTimeout));
+            var webDriver = new FirefoxDriver(opt);
+            return new DefaultBrowserSession(webDriver).Configure(settings);
 		}
 
 		static private IBrowserSession CreateChromeAdapter(BrowserSettings settings)
@@ -70,6 +96,8 @@ namespace EtsyRobot.Engine.WebSession
             //options.AddArgument("disable-popup-blocking");
             options.AddArgument("disable-3d-apis");
             options.AddArgument("disable-gpu");
+            string pathToCurrentUserProfiles = Environment.ExpandEnvironmentVariables("%TEMP%") + @"\chrome_selenium_etsy";
+            options.AddArgument("user-data-dir=" + pathToCurrentUserProfiles);
             if (settings.PluginFileName != null)
 			{
                 options.AddExtension(settings.PluginFileName);

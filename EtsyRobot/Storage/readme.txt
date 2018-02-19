@@ -4,6 +4,9 @@
 	install-Package Npgsql.EF6 -Pre
 	install-package Npgsql.EntityFramework -pre
 2. Manual db migration
-   Enable-Migrations -EnableAutomaticMigrations -Force  //-ContextTypeName CoreEntities,  Softengi.PrivDogAutomation.Storage.Infrastructure.CoreContext
    Add-Migration
    Update-Database -Verbose
+
+PM> Enable-Migrations -EnableAutomaticMigrations -Force -ContextTypeName EtsyRobot.Storage.Infrastructure.CoreContext
+Add-Migration
+PM> Update-Database
