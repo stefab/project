@@ -13,6 +13,7 @@ namespace EtsyRobot.Storage.Infrastructure
 		{
             Database.SetInitializer<CoreContext>(new CoreDatabaseInitializer());
         }
+        public DbSet<Game> Games { get; set; }
 		public DbSet<Job> Jobs { get; set; }
 		public DbSet<JobStep> JobSteps { get; set; }
 		public DbSet<Workload> Workloads { get; set; }

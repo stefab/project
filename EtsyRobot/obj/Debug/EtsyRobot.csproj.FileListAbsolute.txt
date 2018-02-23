@@ -81,3 +81,5 @@ P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.csproj.GenerateResource.Cache
 P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.exe
 P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.pdb
 P:\var\EtsyRobot\EtsyRobot\obj\Debug\EtsyRobot.csprojResolveAssemblyReference.cache
+P:\var\EtsyRobot\EtsyRobot\bin\Debug\MySql.Data.dll
+P:\var\EtsyRobot\EtsyRobot\bin\Debug\MySql.Data.Entity.EF5.dll

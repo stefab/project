@@ -61,6 +61,14 @@
       <HintPath>..\packages\LinqKit.1.1.9.0\lib\net45\LinqKit.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.7.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF5, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.7.9\lib\net45\MySql.Data.Entity.EF5.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -68,8 +76,12 @@
       <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.SQLite, Version=1.0.107.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SQLite.Core.1.0.107.0\lib\net46\System.Data.SQLite.dll</HintPath>
       <Private>True</Private>
@@ -86,6 +98,7 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.107.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Drawing.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Transactions" />
@@ -164,6 +177,7 @@
     <Compile Include="Storage\Infrastructure\Repository.cs" />
     <Compile Include="Storage\Infrastructure\WorkloadRepository.cs" />
     <Compile Include="Storage\JobManager.cs" />
+    <Compile Include="Storage\Model\Game.cs" />
     <Compile Include="Storage\Model\Job.cs" />
     <Compile Include="Storage\Model\JobStatus.cs" />
     <Compile Include="Storage\Model\JobStep.cs" />
@@ -171,6 +185,7 @@
     <Compile Include="Storage\Model\StepType.cs" />
     <Compile Include="Storage\Model\Workload.cs" />
     <Compile Include="Storage\Model\WorkloadItem.cs" />
+    <Compile Include="Storage\ObservableListSource.cs" />
     <Compile Include="Worker\JobHandler.cs" />
     <Compile Include="Worker\JobProducer.cs" />
     <Compile Include="Worker\Program.cs" />
@@ -190,6 +205,8 @@
     </Compile>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\EtsyRobot.Storage.Model.Game.datasource" />
+    <None Include="Properties\DataSources\EtsyRobot.Storage.Model.Job.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
