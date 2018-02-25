@@ -61,12 +61,12 @@
       <HintPath>..\packages\LinqKit.1.1.9.0\lib\net45\LinqKit.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.6.7.9\lib\net45\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.11\lib\net45\MySql.Data.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="MySql.Data.Entity.EF5, Version=6.7.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.Entity.6.7.9\lib\net45\MySql.Data.Entity.EF5.dll</HintPath>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.11.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.11\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -161,16 +161,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="Storage\Framework\Data\ConnectionStringUtils.cs" />
-    <Compile Include="Storage\Framework\Data\DbContextFactory.cs" />
-    <Compile Include="Storage\Framework\Data\IContextFactory.cs" />
-    <Compile Include="Storage\Framework\Data\ObjectDataReader.cs" />
-    <Compile Include="Storage\Framework\Utils\DataAnnotationExtensions.cs" />
-    <Compile Include="Storage\Framework\Utils\Guard.cs" />
-    <Compile Include="Storage\Framework\Utils\ReflectionExtensions.cs" />
+    <Compile Include="Migrations\Framework\Data\ConnectionStringUtils.cs" />
+    <Compile Include="Migrations\Framework\Data\DbContextFactory.cs" />
+    <Compile Include="Migrations\Framework\Data\ObjectDataReader.cs" />
+    <Compile Include="Migrations\Framework\Utils\DataAnnotationExtensions.cs" />
+    <Compile Include="Migrations\Framework\Utils\Guard.cs" />
+    <Compile Include="Migrations\Framework\Utils\ReflectionExtensions.cs" />
     <Compile Include="Storage\Infrastructure\CoreContext.cs" />
     <Compile Include="Storage\Infrastructure\CoreDatabaseInitializer.cs" />
-    <Compile Include="Storage\Infrastructure\FileMutex.cs" />
+    <Compile Include="Migrations\FileMutex.cs" />
     <Compile Include="Storage\Infrastructure\JobRepository.cs" />
     <Compile Include="Storage\Infrastructure\JobTypeConfiguration.cs" />
     <Compile Include="Storage\Infrastructure\PageContentRepository.cs" />
@@ -182,7 +181,9 @@
     <Compile Include="Storage\Model\JobStatus.cs" />
     <Compile Include="Storage\Model\JobStep.cs" />
     <Compile Include="Storage\Model\JobWithContent.cs" />
+    <Compile Include="Storage\Model\Post.cs" />
     <Compile Include="Storage\Model\StepType.cs" />
+    <Compile Include="Storage\Model\Utils.cs" />
     <Compile Include="Storage\Model\Workload.cs" />
     <Compile Include="Storage\Model\WorkloadItem.cs" />
     <Compile Include="Storage\ObservableListSource.cs" />
@@ -206,7 +207,9 @@
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EtsyRobot.Storage.Model.Game.datasource" />
+    <None Include="Properties\DataSources\EtsyRobot.Storage.Model.GameTypeLookup.datasource" />
     <None Include="Properties\DataSources\EtsyRobot.Storage.Model.Job.datasource" />
+    <None Include="Properties\DataSources\EtsyRobot.Storage.Model.Post.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

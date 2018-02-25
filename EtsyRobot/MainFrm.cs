@@ -19,6 +19,10 @@ namespace EtsyRobot
         public MainFrm()
         {
             InitializeComponent();
+            gameTypeLookupBindingSource.DataSource = Game.getGameTypeLookUp2();;
+            //gameTypeDataGridViewColumn.DataSource = Game.getGameTypeLookUp().ToList<Object>();
+            //gameTypeDataGridViewColumn.DisplayMember = "Name";
+            //gameTypeDataGridViewColumn.ValueMember = "Value";
         }
 
         private void btnTestClick(object sender, EventArgs e)
@@ -96,6 +100,36 @@ namespace EtsyRobot
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private void postDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void gameDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void jobBindingSource_CurrentChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFindGames_Click(object sender, EventArgs e)
         {
 
         }

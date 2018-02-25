@@ -29,22 +29,63 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.edLogin = new System.Windows.Forms.TextBox();
             this.edPassword = new System.Windows.Forms.MaskedTextBox();
             this.lbPassword = new System.Windows.Forms.Label();
             this.lbLogin = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabJobs = new System.Windows.Forms.TabPage();
-            this.btnTest = new System.Windows.Forms.Button();
+            this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabGames = new System.Windows.Forms.TabPage();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.gameDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabJobs = new System.Windows.Forms.TabPage();
+            this.jobsNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem2 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem2 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem2 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem2 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem2 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem2 = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator7 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem2 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem2 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnTest = new System.Windows.Forms.Button();
+            this.jobDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabPosts = new System.Windows.Forms.TabPage();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.gameBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.btnFindGames = new System.Windows.Forms.Button();
+            this.gamesNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnAddPosts = new System.Windows.Forms.Button();
+            this.postDataGridView = new System.Windows.Forms.DataGridView();
+            this.txtPosts = new System.Windows.Forms.TextBox();
+            this.postsNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -56,25 +97,65 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.gameBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.tabControlMain = new System.Windows.Forms.TabControl();
+            this.categoryBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gameDataView = new System.Windows.Forms.DataGridView();
+            this.gameTypeLookupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urlDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.priorityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameTypeDataGridViewColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tabJobs.SuspendLayout();
-            this.tabGames.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gameDataGridView)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gameBindingNavigator)).BeginInit();
-            this.gameBindingNavigator.SuspendLayout();
             this.tabControlMain.SuspendLayout();
+            this.tabGames.SuspendLayout();
+            this.tabJobs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jobsNavigator)).BeginInit();
+            this.jobsNavigator.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jobDataGridView)).BeginInit();
+            this.tabPosts.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gamesNavigator)).BeginInit();
+            this.gamesNavigator.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postsNavigator)).BeginInit();
+            this.postsNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameDataView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameTypeLookupBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -131,7 +212,6 @@
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tabControlMain, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
@@ -141,119 +221,500 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1095, 822);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(969, 699);
             this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
-            // tabPage3
+            // tabControlMain
             // 
-            this.tabPage3.BackColor = System.Drawing.SystemColors.Control;
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1153, 538);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
+            this.tabControlMain.Controls.Add(this.tabGames);
+            this.tabControlMain.Controls.Add(this.tabPosts);
+            this.tabControlMain.Controls.Add(this.tabJobs);
+            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlMain.Location = new System.Drawing.Point(3, 3);
+            this.tabControlMain.Multiline = true;
+            this.tabControlMain.Name = "tabControlMain";
+            this.tabControlMain.SelectedIndex = 0;
+            this.tabControlMain.Size = new System.Drawing.Size(963, 693);
+            this.tabControlMain.TabIndex = 6;
+            // 
+            // tabGames
+            // 
+            this.tabGames.AutoScroll = true;
+            this.tabGames.BackColor = System.Drawing.SystemColors.Control;
+            this.tabGames.Controls.Add(this.panel3);
+            this.tabGames.Controls.Add(this.gameDataView);
+            this.tabGames.Controls.Add(this.gamesNavigator);
+            this.tabGames.Location = new System.Drawing.Point(4, 25);
+            this.tabGames.Name = "tabGames";
+            this.tabGames.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGames.Size = new System.Drawing.Size(955, 664);
+            this.tabGames.TabIndex = 0;
+            this.tabGames.Text = "Games";
             // 
             // tabJobs
             // 
+            this.tabJobs.AutoScroll = true;
             this.tabJobs.BackColor = System.Drawing.SystemColors.Control;
-            this.tabJobs.Controls.Add(this.btnTest);
+            this.tabJobs.Controls.Add(this.jobsNavigator);
+            this.tabJobs.Controls.Add(this.panel4);
+            this.tabJobs.Controls.Add(this.jobDataGridView);
             this.tabJobs.Location = new System.Drawing.Point(4, 25);
             this.tabJobs.Name = "tabJobs";
             this.tabJobs.Padding = new System.Windows.Forms.Padding(3);
-            this.tabJobs.Size = new System.Drawing.Size(1153, 538);
+            this.tabJobs.Size = new System.Drawing.Size(955, 591);
             this.tabJobs.TabIndex = 1;
             this.tabJobs.Text = "Jobs";
             // 
+            // jobsNavigator
+            // 
+            this.jobsNavigator.AddNewItem = this.bindingNavigatorAddNewItem2;
+            this.jobsNavigator.CountItem = this.bindingNavigatorCountItem2;
+            this.jobsNavigator.DeleteItem = this.bindingNavigatorDeleteItem2;
+            this.jobsNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.jobsNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem2,
+            this.bindingNavigatorMovePreviousItem2,
+            this.bindingNavigatorSeparator6,
+            this.bindingNavigatorPositionItem2,
+            this.bindingNavigatorCountItem2,
+            this.bindingNavigatorSeparator7,
+            this.bindingNavigatorMoveNextItem2,
+            this.bindingNavigatorMoveLastItem2,
+            this.bindingNavigatorSeparator8,
+            this.bindingNavigatorAddNewItem2,
+            this.bindingNavigatorDeleteItem2});
+            this.jobsNavigator.Location = new System.Drawing.Point(3, 3);
+            this.jobsNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem2;
+            this.jobsNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem2;
+            this.jobsNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem2;
+            this.jobsNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem2;
+            this.jobsNavigator.Name = "jobsNavigator";
+            this.jobsNavigator.PositionItem = this.bindingNavigatorPositionItem2;
+            this.jobsNavigator.Size = new System.Drawing.Size(949, 27);
+            this.jobsNavigator.TabIndex = 3;
+            this.jobsNavigator.Text = "jobsBindingNavigator";
+            // 
+            // bindingNavigatorAddNewItem2
+            // 
+            this.bindingNavigatorAddNewItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem2.Image")));
+            this.bindingNavigatorAddNewItem2.Name = "bindingNavigatorAddNewItem2";
+            this.bindingNavigatorAddNewItem2.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem2.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem2.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem2
+            // 
+            this.bindingNavigatorCountItem2.Name = "bindingNavigatorCountItem2";
+            this.bindingNavigatorCountItem2.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem2.Text = "of {0}";
+            this.bindingNavigatorCountItem2.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem2
+            // 
+            this.bindingNavigatorDeleteItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem2.Image")));
+            this.bindingNavigatorDeleteItem2.Name = "bindingNavigatorDeleteItem2";
+            this.bindingNavigatorDeleteItem2.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem2.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem2.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem2
+            // 
+            this.bindingNavigatorMoveFirstItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem2.Image")));
+            this.bindingNavigatorMoveFirstItem2.Name = "bindingNavigatorMoveFirstItem2";
+            this.bindingNavigatorMoveFirstItem2.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem2.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem2.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem2
+            // 
+            this.bindingNavigatorMovePreviousItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem2.Image")));
+            this.bindingNavigatorMovePreviousItem2.Name = "bindingNavigatorMovePreviousItem2";
+            this.bindingNavigatorMovePreviousItem2.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem2.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem2.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator6
+            // 
+            this.bindingNavigatorSeparator6.Name = "bindingNavigatorSeparator6";
+            this.bindingNavigatorSeparator6.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorPositionItem2
+            // 
+            this.bindingNavigatorPositionItem2.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem2.AutoSize = false;
+            this.bindingNavigatorPositionItem2.Name = "bindingNavigatorPositionItem2";
+            this.bindingNavigatorPositionItem2.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem2.Text = "0";
+            this.bindingNavigatorPositionItem2.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator7
+            // 
+            this.bindingNavigatorSeparator7.Name = "bindingNavigatorSeparator7";
+            this.bindingNavigatorSeparator7.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem2
+            // 
+            this.bindingNavigatorMoveNextItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem2.Image")));
+            this.bindingNavigatorMoveNextItem2.Name = "bindingNavigatorMoveNextItem2";
+            this.bindingNavigatorMoveNextItem2.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem2.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem2.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem2
+            // 
+            this.bindingNavigatorMoveLastItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem2.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem2.Image")));
+            this.bindingNavigatorMoveLastItem2.Name = "bindingNavigatorMoveLastItem2";
+            this.bindingNavigatorMoveLastItem2.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem2.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem2.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator8
+            // 
+            this.bindingNavigatorSeparator8.Name = "bindingNavigatorSeparator8";
+            this.bindingNavigatorSeparator8.Size = new System.Drawing.Size(6, 27);
+            // 
+            // panel4
+            // 
+            this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.Controls.Add(this.btnTest);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(3, 550);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(949, 38);
+            this.panel4.TabIndex = 2;
+            // 
             // btnTest
             // 
-            this.btnTest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnTest.Location = new System.Drawing.Point(6, 509);
+            this.btnTest.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTest.Location = new System.Drawing.Point(0, 0);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(75, 23);
+            this.btnTest.Size = new System.Drawing.Size(88, 38);
             this.btnTest.TabIndex = 1;
             this.btnTest.Text = "Test";
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTestClick);
             // 
-            // tabGames
+            // jobDataGridView
             // 
-            this.tabGames.BackColor = System.Drawing.SystemColors.Control;
-            this.tabGames.Controls.Add(this.panel2);
-            this.tabGames.Location = new System.Drawing.Point(4, 25);
-            this.tabGames.Name = "tabGames";
-            this.tabGames.Padding = new System.Windows.Forms.Padding(3);
-            this.tabGames.Size = new System.Drawing.Size(1081, 714);
-            this.tabGames.TabIndex = 0;
-            this.tabGames.Text = "Games";
-            // 
-            // panel2
-            // 
-            this.panel2.AutoSize = true;
-            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel2.Controls.Add(this.gameBindingNavigator);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.gameDataGridView);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1075, 708);
-            this.panel2.TabIndex = 1;
-            // 
-            // gameDataGridView
-            // 
-            this.gameDataGridView.AllowUserToOrderColumns = true;
-            this.gameDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.jobDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gameDataGridView.AutoGenerateColumns = false;
-            this.gameDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.gameDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gameDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.jobDataGridView.AutoGenerateColumns = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.jobDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.jobDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.jobDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.gameDataGridView.DataSource = this.gameBindingSource;
-            this.gameDataGridView.Location = new System.Drawing.Point(-7, 30);
-            this.gameDataGridView.Name = "gameDataGridView";
-            this.gameDataGridView.RowTemplate.Height = 24;
-            this.gameDataGridView.Size = new System.Drawing.Size(1080, 628);
-            this.gameDataGridView.TabIndex = 0;
-            this.gameDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gameDataGridView_CellContentClick);
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewCheckBoxColumn1,
+            this.dataGridViewCheckBoxColumn2,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewImageColumn1,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17});
+            this.jobDataGridView.DataSource = this.jobBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.jobDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
+            this.jobDataGridView.Location = new System.Drawing.Point(13, 33);
+            this.jobDataGridView.Name = "jobDataGridView";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.jobDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.jobDataGridView.RowTemplate.Height = 24;
+            this.jobDataGridView.Size = new System.Drawing.Size(949, 518);
+            this.jobDataGridView.TabIndex = 1;
+            // 
+            // tabPosts
+            // 
+            this.tabPosts.BackColor = System.Drawing.SystemColors.Control;
+            this.tabPosts.Controls.Add(this.postsNavigator);
+            this.tabPosts.Controls.Add(this.txtPosts);
+            this.tabPosts.Controls.Add(this.postDataGridView);
+            this.tabPosts.Controls.Add(this.panel2);
+            this.tabPosts.Location = new System.Drawing.Point(4, 25);
+            this.tabPosts.Name = "tabPosts";
+            this.tabPosts.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPosts.Size = new System.Drawing.Size(955, 591);
+            this.tabPosts.TabIndex = 2;
+            this.tabPosts.Text = "Posts";
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // urlDataGridViewTextBoxColumn
+            // 
+            this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
+            this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
+            this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
+            this.urlDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // priorityDataGridViewTextBoxColumn
+            // 
+            this.priorityDataGridViewTextBoxColumn.DataPropertyName = "Priority";
+            this.priorityDataGridViewTextBoxColumn.HeaderText = "Priority";
+            this.priorityDataGridViewTextBoxColumn.Name = "priorityDataGridViewTextBoxColumn";
+            this.priorityDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            this.commentDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // createdDataGridViewTextBoxColumn
+            // 
+            this.createdDataGridViewTextBoxColumn.DataPropertyName = "Created";
+            this.createdDataGridViewTextBoxColumn.HeaderText = "Created";
+            this.createdDataGridViewTextBoxColumn.Name = "createdDataGridViewTextBoxColumn";
+            this.createdDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // gameTypeDataGridViewTextBoxColumn
+            // 
+            this.gameTypeDataGridViewTextBoxColumn.DataPropertyName = "GameType";
+            this.gameTypeDataGridViewTextBoxColumn.HeaderText = "GameType";
+            this.gameTypeDataGridViewTextBoxColumn.Name = "gameTypeDataGridViewTextBoxColumn";
+            this.gameTypeDataGridViewTextBoxColumn.Width = 86;
             // 
             // panel3
             // 
             this.panel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnFindGames);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 664);
+            this.panel3.Location = new System.Drawing.Point(3, 619);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1075, 44);
-            this.panel3.TabIndex = 1;
+            this.panel3.Size = new System.Drawing.Size(949, 42);
+            this.panel3.TabIndex = 4;
             // 
-            // button1
+            // btnFindGames
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(0, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 44);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Find games";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnFindGames.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnFindGames.Location = new System.Drawing.Point(0, 0);
+            this.btnFindGames.Name = "btnFindGames";
+            this.btnFindGames.Size = new System.Drawing.Size(105, 42);
+            this.btnFindGames.TabIndex = 0;
+            this.btnFindGames.Text = "Find games";
+            this.btnFindGames.UseVisualStyleBackColor = true;
+            this.btnFindGames.Click += new System.EventHandler(this.btnFindGames_Click);
             // 
-            // gameBindingNavigator
+            // gamesNavigator
             // 
-            this.gameBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.gameBindingNavigator.BindingSource = this.gameBindingSource;
-            this.gameBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.gameBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.gameBindingNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.gameBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gamesNavigator.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.gamesNavigator.BindingSource = this.gameBindingSource;
+            this.gamesNavigator.CountItem = this.bindingNavigatorCountItem1;
+            this.gamesNavigator.DeleteItem = this.bindingNavigatorDeleteItem1;
+            this.gamesNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.gamesNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem1,
+            this.bindingNavigatorMovePreviousItem1,
+            this.bindingNavigatorSeparator3,
+            this.bindingNavigatorPositionItem1,
+            this.bindingNavigatorCountItem1,
+            this.bindingNavigatorSeparator4,
+            this.bindingNavigatorMoveNextItem1,
+            this.bindingNavigatorMoveLastItem1,
+            this.bindingNavigatorSeparator5,
+            this.bindingNavigatorAddNewItem1,
+            this.bindingNavigatorDeleteItem1,
+            this.toolStripButton1});
+            this.gamesNavigator.Location = new System.Drawing.Point(3, 3);
+            this.gamesNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
+            this.gamesNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem1;
+            this.gamesNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem1;
+            this.gamesNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
+            this.gamesNavigator.Name = "gamesNavigator";
+            this.gamesNavigator.PositionItem = this.bindingNavigatorPositionItem1;
+            this.gamesNavigator.Size = new System.Drawing.Size(949, 27);
+            this.gamesNavigator.TabIndex = 5;
+            this.gamesNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem1
+            // 
+            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
+            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
+            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem1.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem1
+            // 
+            this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(45, 24);
+            this.bindingNavigatorCountItem1.Text = "of {0}";
+            this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem1
+            // 
+            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
+            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
+            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorDeleteItem1.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem1
+            // 
+            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
+            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
+            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveFirstItem1.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem1
+            // 
+            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
+            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
+            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMovePreviousItem1.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator3
+            // 
+            this.bindingNavigatorSeparator3.Name = "bindingNavigatorSeparator3";
+            this.bindingNavigatorSeparator3.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorPositionItem1
+            // 
+            this.bindingNavigatorPositionItem1.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
+            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 27);
+            this.bindingNavigatorPositionItem1.Text = "0";
+            this.bindingNavigatorPositionItem1.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator4
+            // 
+            this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
+            this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 27);
+            // 
+            // bindingNavigatorMoveNextItem1
+            // 
+            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
+            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
+            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveNextItem1.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem1
+            // 
+            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
+            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
+            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorMoveLastItem1.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator5
+            // 
+            this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
+            this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 27);
+            // 
+            // panel2
+            // 
+            this.panel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.btnAddPosts);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(3, 550);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(949, 38);
+            this.panel2.TabIndex = 5;
+            // 
+            // btnAddPosts
+            // 
+            this.btnAddPosts.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnAddPosts.Location = new System.Drawing.Point(0, 0);
+            this.btnAddPosts.Name = "btnAddPosts";
+            this.btnAddPosts.Size = new System.Drawing.Size(105, 38);
+            this.btnAddPosts.TabIndex = 0;
+            this.btnAddPosts.Text = "Add posts";
+            this.btnAddPosts.UseVisualStyleBackColor = true;
+            this.btnAddPosts.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // postDataGridView
+            // 
+            this.postDataGridView.AllowUserToOrderColumns = true;
+            this.postDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.postDataGridView.AutoGenerateColumns = false;
+            this.postDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.postDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewCheckBoxColumn3});
+            this.postDataGridView.DataSource = this.postBindingSource;
+            this.postDataGridView.Location = new System.Drawing.Point(0, 33);
+            this.postDataGridView.Name = "postDataGridView";
+            this.postDataGridView.RowTemplate.Height = 24;
+            this.postDataGridView.Size = new System.Drawing.Size(955, 372);
+            this.postDataGridView.TabIndex = 5;
+            this.postDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.postDataGridView_CellContentClick);
+            // 
+            // txtPosts
+            // 
+            this.txtPosts.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.txtPosts.Location = new System.Drawing.Point(3, 411);
+            this.txtPosts.Multiline = true;
+            this.txtPosts.Name = "txtPosts";
+            this.txtPosts.Size = new System.Drawing.Size(949, 139);
+            this.txtPosts.TabIndex = 6;
+            // 
+            // postsNavigator
+            // 
+            this.postsNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.postsNavigator.BindingSource = this.postBindingSource;
+            this.postsNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.postsNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.postsNavigator.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.postsNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -265,18 +726,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.gameBindingNavigatorSaveItem});
-            this.gameBindingNavigator.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.gameBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.gameBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.gameBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.gameBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.gameBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.gameBindingNavigator.Name = "gameBindingNavigator";
-            this.gameBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.gameBindingNavigator.Size = new System.Drawing.Size(1075, 27);
-            this.gameBindingNavigator.TabIndex = 2;
-            this.gameBindingNavigator.Text = "bindingNavigator1";
+            this.categoryBindingNavigatorSaveItem});
+            this.postsNavigator.Location = new System.Drawing.Point(3, 3);
+            this.postsNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.postsNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.postsNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.postsNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.postsNavigator.Name = "postsNavigator";
+            this.postsNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.postsNavigator.Size = new System.Drawing.Size(949, 27);
+            this.postsNavigator.TabIndex = 7;
+            this.postsNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -319,7 +779,7 @@
             // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
@@ -342,7 +802,7 @@
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorAddNewItem
@@ -363,66 +823,284 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // gameBindingNavigatorSaveItem
+            // categoryBindingNavigatorSaveItem
             // 
-            this.gameBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.gameBindingNavigatorSaveItem.Enabled = false;
-            this.gameBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("gameBindingNavigatorSaveItem.Image")));
-            this.gameBindingNavigatorSaveItem.Name = "gameBindingNavigatorSaveItem";
-            this.gameBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
-            this.gameBindingNavigatorSaveItem.Text = "Save Data";
+            this.categoryBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.categoryBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("categoryBindingNavigatorSaveItem.Image")));
+            this.categoryBindingNavigatorSaveItem.Name = "categoryBindingNavigatorSaveItem";
+            this.categoryBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
+            this.categoryBindingNavigatorSaveItem.Text = "Save Data";
             // 
-            // tabControlMain
+            // toolStripButton1
             // 
-            this.tabControlMain.Controls.Add(this.tabGames);
-            this.tabControlMain.Controls.Add(this.tabJobs);
-            this.tabControlMain.Controls.Add(this.tabPage3);
-            this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlMain.Location = new System.Drawing.Point(3, 76);
-            this.tabControlMain.Name = "tabControlMain";
-            this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(1089, 743);
-            this.tabControlMain.TabIndex = 6;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Text = "Save Data";
             // 
             // gameBindingSource
             // 
             this.gameBindingSource.DataSource = typeof(EtsyRobot.Storage.Model.Game);
             // 
+            // postBindingSource
+            // 
+            this.postBindingSource.DataSource = typeof(EtsyRobot.Storage.Model.Post);
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn18.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // dataGridViewTextBoxColumn19
+            // 
+            this.dataGridViewTextBoxColumn19.DataPropertyName = "PostAndUrl";
+            this.dataGridViewTextBoxColumn19.FillWeight = 200F;
+            this.dataGridViewTextBoxColumn19.HeaderText = "PostAndUrl";
+            this.dataGridViewTextBoxColumn19.MaxInputLength = 2048;
+            this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
+            this.dataGridViewTextBoxColumn19.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Priority";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Priority";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewCheckBoxColumn3
+            // 
+            this.dataGridViewCheckBoxColumn3.DataPropertyName = "Active";
+            this.dataGridViewCheckBoxColumn3.HeaderText = "Active";
+            this.dataGridViewCheckBoxColumn3.Name = "dataGridViewCheckBoxColumn3";
+            // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "EtsyUser";
+            this.dataGridViewTextBoxColumn1.HeaderText = "EtsyUser";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Url";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Url";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Password";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Password";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Priority";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Priority";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn3.HeaderText = "ID";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "GameType";
-            this.dataGridViewTextBoxColumn4.HeaderText = "GameType";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Url";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Url";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Comment";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Comment";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "IssuedBy";
+            this.dataGridViewTextBoxColumn5.HeaderText = "IssuedBy";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "IssuedAt";
+            this.dataGridViewTextBoxColumn6.HeaderText = "IssuedAt";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "CompletedAt";
+            this.dataGridViewTextBoxColumn7.HeaderText = "CompletedAt";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "Status";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Status";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewCheckBoxColumn1
+            // 
+            this.dataGridViewCheckBoxColumn1.DataPropertyName = "HasReferenceScraped";
+            this.dataGridViewCheckBoxColumn1.HeaderText = "HasReferenceScraped";
+            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            // 
+            // dataGridViewCheckBoxColumn2
+            // 
+            this.dataGridViewCheckBoxColumn2.DataPropertyName = "HasTestScraped";
+            this.dataGridViewCheckBoxColumn2.HeaderText = "HasTestScraped";
+            this.dataGridViewCheckBoxColumn2.Name = "dataGridViewCheckBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Issue";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Issue";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "IssueDetails";
+            this.dataGridViewTextBoxColumn10.HeaderText = "IssueDetails";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "ErrorMessage";
+            this.dataGridViewTextBoxColumn11.HeaderText = "ErrorMessage";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "RowVersion";
+            this.dataGridViewImageColumn1.HeaderText = "RowVersion";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "ExecutionTime";
+            this.dataGridViewTextBoxColumn12.HeaderText = "ExecutionTime";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "TestScrapingHost";
+            this.dataGridViewTextBoxColumn13.HeaderText = "TestScrapingHost";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "ReferenceScrapingHost";
+            this.dataGridViewTextBoxColumn14.HeaderText = "ReferenceScrapingHost";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "AdsInfo";
+            this.dataGridViewTextBoxColumn15.HeaderText = "AdsInfo";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "Priority";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Priority";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "Steps";
+            this.dataGridViewTextBoxColumn17.HeaderText = "Steps";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            this.dataGridViewTextBoxColumn17.ReadOnly = true;
+            // 
+            // jobBindingSource
+            // 
+            this.jobBindingSource.DataSource = typeof(EtsyRobot.Storage.Model.Job);
+            this.jobBindingSource.CurrentChanged += new System.EventHandler(this.jobBindingSource_CurrentChanged_1);
+            // 
+            // gameDataView
+            // 
+            this.gameDataView.AllowUserToOrderColumns = true;
+            this.gameDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gameDataView.AutoGenerateColumns = false;
+            this.gameDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gameDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.gameDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gameDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn1,
+            this.urlDataGridViewTextBoxColumn1,
+            this.priorityDataGridViewTextBoxColumn1,
+            this.gameTypeDataGridViewColumn,
+            this.commentDataGridViewTextBoxColumn1,
+            this.createdDataGridViewTextBoxColumn1});
+            this.gameDataView.DataSource = this.gameBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gameDataView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gameDataView.Location = new System.Drawing.Point(0, 33);
+            this.gameDataView.Name = "gameDataView";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gameDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.gameDataView.RowTemplate.Height = 24;
+            this.gameDataView.Size = new System.Drawing.Size(953, 580);
+            this.gameDataView.TabIndex = 3;
+            this.gameDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gameDataView_CellContentClick);
+            // 
+            // gameTypeLookupBindingSource
+            // 
+            this.gameTypeLookupBindingSource.DataSource = typeof(EtsyRobot.Storage.Model.GameTypeLookup);
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            // 
+            // urlDataGridViewTextBoxColumn1
+            // 
+            this.urlDataGridViewTextBoxColumn1.DataPropertyName = "Url";
+            this.urlDataGridViewTextBoxColumn1.HeaderText = "Url";
+            this.urlDataGridViewTextBoxColumn1.Name = "urlDataGridViewTextBoxColumn1";
+            this.urlDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.urlDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // priorityDataGridViewTextBoxColumn1
+            // 
+            this.priorityDataGridViewTextBoxColumn1.DataPropertyName = "Priority";
+            this.priorityDataGridViewTextBoxColumn1.HeaderText = "Priority";
+            this.priorityDataGridViewTextBoxColumn1.Name = "priorityDataGridViewTextBoxColumn1";
+            this.priorityDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // gameTypeDataGridViewColumn
+            // 
+            this.gameTypeDataGridViewColumn.DataPropertyName = "GameType";
+            this.gameTypeDataGridViewColumn.DataSource = this.gameTypeLookupBindingSource;
+            this.gameTypeDataGridViewColumn.DisplayMember = "Name";
+            this.gameTypeDataGridViewColumn.HeaderText = "GameType";
+            this.gameTypeDataGridViewColumn.Name = "gameTypeDataGridViewColumn";
+            this.gameTypeDataGridViewColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.gameTypeDataGridViewColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.gameTypeDataGridViewColumn.ValueMember = "Value";
+            // 
+            // commentDataGridViewTextBoxColumn1
+            // 
+            this.commentDataGridViewTextBoxColumn1.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn1.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
+            // 
+            // createdDataGridViewTextBoxColumn1
+            // 
+            this.createdDataGridViewTextBoxColumn1.DataPropertyName = "Created";
+            this.createdDataGridViewTextBoxColumn1.HeaderText = "Created";
+            this.createdDataGridViewTextBoxColumn1.Name = "createdDataGridViewTextBoxColumn1";
             // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 822);
+            this.ClientSize = new System.Drawing.Size(969, 699);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainFrm";
@@ -431,18 +1109,32 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tabJobs.ResumeLayout(false);
+            this.tabControlMain.ResumeLayout(false);
             this.tabGames.ResumeLayout(false);
             this.tabGames.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gameDataGridView)).EndInit();
+            this.tabJobs.ResumeLayout(false);
+            this.tabJobs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.jobsNavigator)).EndInit();
+            this.jobsNavigator.ResumeLayout(false);
+            this.jobsNavigator.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.jobDataGridView)).EndInit();
+            this.tabPosts.ResumeLayout(false);
+            this.tabPosts.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gameBindingNavigator)).EndInit();
-            this.gameBindingNavigator.ResumeLayout(false);
-            this.gameBindingNavigator.PerformLayout();
-            this.tabControlMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gamesNavigator)).EndInit();
+            this.gamesNavigator.ResumeLayout(false);
+            this.gamesNavigator.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.postDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postsNavigator)).EndInit();
+            this.postsNavigator.ResumeLayout(false);
+            this.postsNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameDataView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameTypeLookupBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,11 +1146,72 @@
         private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.Label lbLogin;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.BindingSource gameBindingSource;
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tabGames;
+        private System.Windows.Forms.TabPage tabJobs;
+        private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.TabPage tabPosts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn urlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priorityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gameTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource gameBindingSource;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView jobDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.BindingSource jobBindingSource;
+        private System.Windows.Forms.BindingNavigator jobsNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem2;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem2;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator6;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem2;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator7;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem2;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator8;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnFindGames;
+        private System.Windows.Forms.BindingNavigator gamesNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator3;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator4;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.BindingNavigator gameBindingNavigator;
+        private System.Windows.Forms.Button btnAddPosts;
+        private System.Windows.Forms.DataGridView postDataGridView;
+        private System.Windows.Forms.BindingSource postBindingSource;
+        private System.Windows.Forms.BindingNavigator postsNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -470,18 +1223,21 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton gameBindingNavigatorSaveItem;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView gameDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.TabPage tabJobs;
-        private System.Windows.Forms.Button btnTest;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TextBox txtPosts;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn3;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton categoryBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView gameDataView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewLinkColumn urlDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn priorityDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn gameTypeDataGridViewColumn;
+        private System.Windows.Forms.BindingSource gameTypeLookupBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdDataGridViewTextBoxColumn1;
     }
 }
 
