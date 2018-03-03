@@ -23,7 +23,7 @@ namespace EtsyRobot
         public MainFrm()
         {
             InitializeComponent();
-            gameTypeLookupBindingSource.DataSource = Game.getGameTypeLookUp2();;
+            //gameTypeLookupBindingSource.DataSource = Game.getGameTypeLookUp2();;
             //gameTypeDataGridViewColumn.DataSource = Game.getGameTypeLookUp().ToList<Object>();
             //gameTypeDataGridViewColumn.DisplayMember = "Name";
             //gameTypeDataGridViewColumn.ValueMember = "Value";
@@ -79,76 +79,10 @@ namespace EtsyRobot
             job.Password = @"konfetka39";
             handler.Handle(job);
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void btnAddPosts_Click(object sender, EventArgs e)
         {
 
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void jobBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void jobDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
-
-        private void gameDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
-        }
-
-        private void postDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void gameDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void jobBindingSource_CurrentChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnFindGames_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
