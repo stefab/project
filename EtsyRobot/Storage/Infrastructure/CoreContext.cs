@@ -6,6 +6,9 @@ using EtsyRobot.Storage.Model;
 
 namespace EtsyRobot.Storage.Infrastructure
 {
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+
     public class CoreContext : DbContext
 	{
 		public CoreContext()
@@ -14,7 +17,7 @@ namespace EtsyRobot.Storage.Infrastructure
             Database.SetInitializer<CoreContext>(new CoreDatabaseInitializer());
         }
         public DbSet<Game> Games { get; set; }
-        public DbSet<Post> Posts { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
 		public DbSet<Job> Jobs { get; set; }
 		public DbSet<JobStep> JobSteps { get; set; }
 		public DbSet<Workload> Workloads { get; set; }

@@ -11,11 +11,15 @@ using EtsyRobot.Worker;
 using EtsyRobot.Storage.Model;
 using System.Text.RegularExpressions;
 using EtsyRobot.Storage.Infrastructure;
+using System.Data.Entity;
 
 namespace EtsyRobot
 {
+
     public partial class MainFrm : Form
     {
+        private CoreContext _dbContext;
+
         public MainFrm()
         {
             InitializeComponent();
@@ -23,6 +27,18 @@ namespace EtsyRobot
             //gameTypeDataGridViewColumn.DataSource = Game.getGameTypeLookUp().ToList<Object>();
             //gameTypeDataGridViewColumn.DisplayMember = "Name";
             //gameTypeDataGridViewColumn.ValueMember = "Value";
+            _dbContext = new CoreContext();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            loadData();
+        }
+
+        private void  loadData()
+        {
+                 _dbContext.Posts.Load();
         }
 
         private void btnTestClick(object sender, EventArgs e)
@@ -133,5 +149,6 @@ namespace EtsyRobot
         {
 
         }
+
     }
 }
