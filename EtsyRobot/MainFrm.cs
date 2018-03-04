@@ -28,6 +28,7 @@ namespace EtsyRobot
             //gameTypeDataGridViewColumn.DisplayMember = "Name";
             //gameTypeDataGridViewColumn.ValueMember = "Value";
             _dbContext = new CoreContext();
+            
         }
 
         protected override void OnLoad(EventArgs e)
@@ -38,7 +39,9 @@ namespace EtsyRobot
 
         private void  loadData()
         {
-                 _dbContext.Posts.Load();
+            _dbContext.Games.Load();
+            _dbContext.Posts.Load();
+            postBindingSource.DataSource = _dbContext.Posts.Local;
         }
 
         private void btnTestClick(object sender, EventArgs e)
@@ -79,10 +82,63 @@ namespace EtsyRobot
             job.Password = @"konfetka39";
             handler.Handle(job);
         }
+     
         
         private void btnAddPosts_Click(object sender, EventArgs e)
         {
 
+            foreach (string postStr in edPosts.Lines)
+            {
+                Console.WriteLine(postStr.Trim());
+                string preparedPostStr = postStr.Trim();
+                if (preparedPostStr.Length > 0)
+                {
+                    Post post = new Post(preparedPostStr);
+                    _dbContext.Posts.Add(post);
+                }
+            }
+            this.Validate();
+            _dbContext.SaveChanges();
+            //postBindingSource.DataSource = null;
+            postBindingSource.ResetBindings(true);
+            //postBindingSource.DataSource = _dbContext.Posts.Local;
+            //postBindingSource.
+            postDataGridView.Update();
+            postDataGridView.Refresh();
+        }
+
+        private void categoryBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            postDataGridView.EndEdit();
+            _dbContext.SaveChanges();
+        }
+
+        private void postsBindingRefresh_Click(object sender, EventArgs e)
+        {
+            _dbContext.Posts.Load();
+            postDataGridView.Refresh();
+        }
+
+        private void advancedDataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void postDataGridView_SortStringChanged(object sender, EventArgs e)
+        {
+            //postDataGridView
+            postBindingSource.Sort = postDataGridView.SortString;
+            postBindingSource.ResetBindings(true);
+        }
+
+        private void postDataGridView_FilterStringChanged(object sender, EventArgs e)
+        {
+            //postBindingSource.Filter = postDataGridView.FilterString;
+            postBindingSource.Sort = "PostAndUrl";
+            postBindingSource.ResetBindings(true);
+
+            postDataGridView.Update();
+            postDataGridView.Refresh();
         }
     }
 }

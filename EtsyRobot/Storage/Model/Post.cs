@@ -10,14 +10,25 @@ namespace EtsyRobot.Storage.Model
 {
     public class Post
     {
+        public Post(string post)
+        {
+            PostAndUrl = post;
+        }
+        public Post()
+        {
+            PostAndUrl = "";
+            Active = true;
+        }
         [Key]
         public int ID { get; set; }
 
         [Required, StringLength(2048)]
         public string PostAndUrl { get; set; }
-        [Required, System.ComponentModel.DefaultValue(0)]
-        public UInt16 Priority { get; set; }
-        [Required, System.ComponentModel.DefaultValue(true)]
-        public bool Active  { get; set; }
+        [Required]
+        public int Priority { get; set; } = 1;
+        [Required]
+        public uint Priority2 { get; set; } = 1;
+        [Required]
+        public bool Active { get; set; } = true;
     }
 }

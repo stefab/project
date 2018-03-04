@@ -117,3 +117,9 @@ C:\my_projects\EtsyRobot\bin\Debug\WebDriver.xml
 C:\my_projects\EtsyRobot\bin\Debug\WebDriver.Support.xml
 C:\my_projects\EtsyRobot\obj\Debug\EtsyRobot.exe
 C:\my_projects\EtsyRobot\obj\Debug\EtsyRobot.pdb
+C:\my_projects\EtsyRobot\obj\Debug\EtsyRobot.csprojResolveAssemblyReference.cache
+C:\my_projects\EtsyRobot\bin\Debug\AdvancedDataGridView.dll
+C:\my_projects\EtsyRobot\bin\Debug\DataGridViewAutoFilter.dll
+C:\my_projects\EtsyRobot\bin\Debug\AdvancedDataGridView.xml
+C:\my_projects\EtsyRobot\bin\Debug\fr\AdvancedDataGridView.resources.dll
+C:\my_projects\EtsyRobot\bin\Debug\ru\AdvancedDataGridView.resources.dll
