@@ -13,6 +13,11 @@ namespace EtsyRobot.Worker
 			return new GameHandler(true);
 		}
 
+        static public JobHandler CreateFindGamesHandler()
+        {
+			return new GameFinderHandler();
+        }
+
 		static public JobHandler CreateTestScrapingHandler()
 		{
 			return new GameHandler(false);

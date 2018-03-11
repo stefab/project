@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,8 +44,14 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPosts = new System.Windows.Forms.TabPage();
+            this.postDataGridView = new ADGV.AdvancedDataGridView();
+            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.postAndUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priorityDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.postsNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -56,7 +62,9 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.postsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.postsBindingRefresh = new System.Windows.Forms.ToolStripButton();
             this.edPosts = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnAddPosts = new System.Windows.Forms.Button();
@@ -64,8 +72,14 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnFindGames = new System.Windows.Forms.Button();
             this.gameDataView = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urlDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.priorityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gamesNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -93,27 +107,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnTest = new System.Windows.Forms.Button();
             this.jobDataGridView = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postsBindingRefresh = new System.Windows.Forms.ToolStripButton();
-            this.postDataGridView = new ADGV.AdvancedDataGridView();
-            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
-            this.iDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.postAndUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priorityDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.activeDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.postBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.urlDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.priorityDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gameBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,16 +128,26 @@
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.urlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priorityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gameTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.directorySearcher1 = new System.DirectoryServices.DirectorySearcher();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPosts.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsNavigator)).BeginInit();
             this.postsNavigator.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabGames.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gameDataView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamesNavigator)).BeginInit();
             this.gamesNavigator.SuspendLayout();
             this.tabJobs.SuspendLayout();
@@ -152,9 +155,6 @@
             this.jobsNavigator.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.jobDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -248,6 +248,74 @@
             this.tabPosts.TabIndex = 2;
             this.tabPosts.Text = "Posts/Products";
             // 
+            // postDataGridView
+            // 
+            this.postDataGridView.AllowUserToOrderColumns = true;
+            this.postDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.postDataGridView.AutoGenerateColumns = false;
+            this.postDataGridView.AutoGenerateContextFilters = true;
+            this.postDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.postDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn2,
+            this.postAndUrlDataGridViewTextBoxColumn,
+            this.priorityDataGridViewTextBoxColumn2,
+            this.activeDataGridViewCheckBoxColumn});
+            this.postDataGridView.DataSource = this.postBindingSource;
+            this.postDataGridView.DateWithTime = false;
+            this.postDataGridView.Location = new System.Drawing.Point(2, 32);
+            this.postDataGridView.Name = "postDataGridView";
+            this.postDataGridView.Size = new System.Drawing.Size(805, 323);
+            this.postDataGridView.TabIndex = 9;
+            this.postDataGridView.TimeFilter = false;
+            this.postDataGridView.SortStringChanged += new System.EventHandler(this.postDataGridView_SortStringChanged);
+            this.postDataGridView.FilterStringChanged += new System.EventHandler(this.postDataGridView_FilterStringChanged);
+            this.postDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellContentClick);
+            // 
+            // iDDataGridViewTextBoxColumn2
+            // 
+            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn2.MinimumWidth = 22;
+            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
+            this.iDDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.iDDataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // postAndUrlDataGridViewTextBoxColumn
+            // 
+            this.postAndUrlDataGridViewTextBoxColumn.DataPropertyName = "PostAndUrl";
+            this.postAndUrlDataGridViewTextBoxColumn.HeaderText = "PostAndUrl";
+            this.postAndUrlDataGridViewTextBoxColumn.MaxInputLength = 2048;
+            this.postAndUrlDataGridViewTextBoxColumn.MinimumWidth = 22;
+            this.postAndUrlDataGridViewTextBoxColumn.Name = "postAndUrlDataGridViewTextBoxColumn";
+            this.postAndUrlDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // priorityDataGridViewTextBoxColumn2
+            // 
+            this.priorityDataGridViewTextBoxColumn2.DataPropertyName = "Priority";
+            this.priorityDataGridViewTextBoxColumn2.HeaderText = "Priority";
+            this.priorityDataGridViewTextBoxColumn2.MinimumWidth = 22;
+            this.priorityDataGridViewTextBoxColumn2.Name = "priorityDataGridViewTextBoxColumn2";
+            this.priorityDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // activeDataGridViewCheckBoxColumn
+            // 
+            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
+            this.activeDataGridViewCheckBoxColumn.FalseValue = "false";
+            this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
+            this.activeDataGridViewCheckBoxColumn.MinimumWidth = 22;
+            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
+            this.activeDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.activeDataGridViewCheckBoxColumn.TrueValue = "true";
+            // 
+            // postBindingSource
+            // 
+            this.postBindingSource.AllowNew = true;
+            this.postBindingSource.DataSource = typeof(EtsyRobot.Storage.Model.Post);
+            this.postBindingSource.Filter = "";
+            this.postBindingSource.Sort = "";
+            // 
             // postsNavigator
             // 
             this.postsNavigator.AddNewItem = this.bindingNavigatorAddNewItem1;
@@ -280,14 +348,14 @@
             this.postsNavigator.TabIndex = 7;
             this.postsNavigator.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
+            // bindingNavigatorAddNewItem1
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
+            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
+            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem1.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
@@ -365,6 +433,15 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(24, 24);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
             // postsBindingNavigatorSaveItem
             // 
             this.postsBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -373,6 +450,16 @@
             this.postsBindingNavigatorSaveItem.Size = new System.Drawing.Size(24, 24);
             this.postsBindingNavigatorSaveItem.Text = "Save Data";
             this.postsBindingNavigatorSaveItem.Click += new System.EventHandler(this.categoryBindingNavigatorSaveItem_Click);
+            // 
+            // postsBindingRefresh
+            // 
+            this.postsBindingRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.postsBindingRefresh.Image = ((System.Drawing.Image)(resources.GetObject("postsBindingRefresh.Image")));
+            this.postsBindingRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.postsBindingRefresh.Name = "postsBindingRefresh";
+            this.postsBindingRefresh.Size = new System.Drawing.Size(24, 24);
+            this.postsBindingRefresh.Text = "toolStripButton2";
+            this.postsBindingRefresh.Click += new System.EventHandler(this.postsBindingRefresh_Click);
             // 
             // edPosts
             // 
@@ -445,6 +532,7 @@
             this.btnFindGames.TabIndex = 0;
             this.btnFindGames.Text = "Find games";
             this.btnFindGames.UseVisualStyleBackColor = true;
+            this.btnFindGames.Click += new System.EventHandler(this.btnFindGames_Click);
             // 
             // gameDataView
             // 
@@ -494,6 +582,51 @@
             this.gameDataView.Size = new System.Drawing.Size(809, 433);
             this.gameDataView.TabIndex = 3;
             // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            // 
+            // urlDataGridViewTextBoxColumn1
+            // 
+            this.urlDataGridViewTextBoxColumn1.DataPropertyName = "Url";
+            this.urlDataGridViewTextBoxColumn1.HeaderText = "Url";
+            this.urlDataGridViewTextBoxColumn1.Name = "urlDataGridViewTextBoxColumn1";
+            this.urlDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.urlDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // priorityDataGridViewTextBoxColumn1
+            // 
+            this.priorityDataGridViewTextBoxColumn1.DataPropertyName = "Priority";
+            this.priorityDataGridViewTextBoxColumn1.HeaderText = "Priority";
+            this.priorityDataGridViewTextBoxColumn1.Name = "priorityDataGridViewTextBoxColumn1";
+            this.priorityDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // gameTypeDataGridViewTextBoxColumn1
+            // 
+            this.gameTypeDataGridViewTextBoxColumn1.DataPropertyName = "GameType";
+            this.gameTypeDataGridViewTextBoxColumn1.HeaderText = "GameType";
+            this.gameTypeDataGridViewTextBoxColumn1.Name = "gameTypeDataGridViewTextBoxColumn1";
+            this.gameTypeDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // commentDataGridViewTextBoxColumn1
+            // 
+            this.commentDataGridViewTextBoxColumn1.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn1.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
+            // 
+            // createdDataGridViewTextBoxColumn1
+            // 
+            this.createdDataGridViewTextBoxColumn1.DataPropertyName = "Created";
+            this.createdDataGridViewTextBoxColumn1.HeaderText = "Created";
+            this.createdDataGridViewTextBoxColumn1.Name = "createdDataGridViewTextBoxColumn1";
+            // 
+            // gameBindingSource
+            // 
+            this.gameBindingSource.DataSource = typeof(EtsyRobot.Storage.Model.Game);
+            this.gameBindingSource.CurrentChanged += new System.EventHandler(this.gameBindingSource_CurrentChanged);
+            // 
             // gamesNavigator
             // 
             this.gamesNavigator.AddNewItem = this.bindingNavigatorAddNewItem1;
@@ -524,15 +657,6 @@
             this.gamesNavigator.Size = new System.Drawing.Size(805, 27);
             this.gamesNavigator.TabIndex = 5;
             this.gamesNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem1
-            // 
-            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
-            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
-            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(24, 24);
-            this.bindingNavigatorAddNewItem1.Text = "Add new";
             // 
             // bindingNavigatorCountItem1
             // 
@@ -831,175 +955,6 @@
             this.jobDataGridView.Size = new System.Drawing.Size(811, 438);
             this.jobDataGridView.TabIndex = 1;
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // urlDataGridViewTextBoxColumn
-            // 
-            this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
-            this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
-            this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
-            this.urlDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // priorityDataGridViewTextBoxColumn
-            // 
-            this.priorityDataGridViewTextBoxColumn.DataPropertyName = "Priority";
-            this.priorityDataGridViewTextBoxColumn.HeaderText = "Priority";
-            this.priorityDataGridViewTextBoxColumn.Name = "priorityDataGridViewTextBoxColumn";
-            this.priorityDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            this.commentDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // createdDataGridViewTextBoxColumn
-            // 
-            this.createdDataGridViewTextBoxColumn.DataPropertyName = "Created";
-            this.createdDataGridViewTextBoxColumn.HeaderText = "Created";
-            this.createdDataGridViewTextBoxColumn.Name = "createdDataGridViewTextBoxColumn";
-            this.createdDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // gameTypeDataGridViewTextBoxColumn
-            // 
-            this.gameTypeDataGridViewTextBoxColumn.DataPropertyName = "GameType";
-            this.gameTypeDataGridViewTextBoxColumn.HeaderText = "GameType";
-            this.gameTypeDataGridViewTextBoxColumn.Name = "gameTypeDataGridViewTextBoxColumn";
-            this.gameTypeDataGridViewTextBoxColumn.Width = 86;
-            // 
-            // postsBindingRefresh
-            // 
-            this.postsBindingRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.postsBindingRefresh.Image = ((System.Drawing.Image)(resources.GetObject("postsBindingRefresh.Image")));
-            this.postsBindingRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.postsBindingRefresh.Name = "postsBindingRefresh";
-            this.postsBindingRefresh.Size = new System.Drawing.Size(24, 24);
-            this.postsBindingRefresh.Text = "toolStripButton2";
-            this.postsBindingRefresh.Click += new System.EventHandler(this.postsBindingRefresh_Click);
-            // 
-            // postDataGridView
-            // 
-            this.postDataGridView.AllowUserToOrderColumns = true;
-            this.postDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.postDataGridView.AutoGenerateColumns = false;
-            this.postDataGridView.AutoGenerateContextFilters = true;
-            this.postDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.postDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn2,
-            this.postAndUrlDataGridViewTextBoxColumn,
-            this.priorityDataGridViewTextBoxColumn2,
-            this.activeDataGridViewCheckBoxColumn});
-            this.postDataGridView.DataSource = this.postBindingSource;
-            this.postDataGridView.DateWithTime = false;
-            this.postDataGridView.Location = new System.Drawing.Point(2, 32);
-            this.postDataGridView.Name = "postDataGridView";
-            this.postDataGridView.Size = new System.Drawing.Size(805, 323);
-            this.postDataGridView.TabIndex = 9;
-            this.postDataGridView.TimeFilter = false;
-            this.postDataGridView.SortStringChanged += new System.EventHandler(this.postDataGridView_SortStringChanged);
-            this.postDataGridView.FilterStringChanged += new System.EventHandler(this.postDataGridView_FilterStringChanged);
-            this.postDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.advancedDataGridView1_CellContentClick);
-            // 
-            // directorySearcher1
-            // 
-            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
-            // 
-            // iDDataGridViewTextBoxColumn2
-            // 
-            this.iDDataGridViewTextBoxColumn2.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn2.MinimumWidth = 22;
-            this.iDDataGridViewTextBoxColumn2.Name = "iDDataGridViewTextBoxColumn2";
-            this.iDDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.iDDataGridViewTextBoxColumn2.Visible = false;
-            // 
-            // postAndUrlDataGridViewTextBoxColumn
-            // 
-            this.postAndUrlDataGridViewTextBoxColumn.DataPropertyName = "PostAndUrl";
-            this.postAndUrlDataGridViewTextBoxColumn.HeaderText = "PostAndUrl";
-            this.postAndUrlDataGridViewTextBoxColumn.MaxInputLength = 2048;
-            this.postAndUrlDataGridViewTextBoxColumn.MinimumWidth = 22;
-            this.postAndUrlDataGridViewTextBoxColumn.Name = "postAndUrlDataGridViewTextBoxColumn";
-            this.postAndUrlDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // priorityDataGridViewTextBoxColumn2
-            // 
-            this.priorityDataGridViewTextBoxColumn2.DataPropertyName = "Priority";
-            this.priorityDataGridViewTextBoxColumn2.HeaderText = "Priority";
-            this.priorityDataGridViewTextBoxColumn2.MinimumWidth = 22;
-            this.priorityDataGridViewTextBoxColumn2.Name = "priorityDataGridViewTextBoxColumn2";
-            this.priorityDataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // activeDataGridViewCheckBoxColumn
-            // 
-            this.activeDataGridViewCheckBoxColumn.DataPropertyName = "Active";
-            this.activeDataGridViewCheckBoxColumn.FalseValue = "false";
-            this.activeDataGridViewCheckBoxColumn.HeaderText = "Active";
-            this.activeDataGridViewCheckBoxColumn.MinimumWidth = 22;
-            this.activeDataGridViewCheckBoxColumn.Name = "activeDataGridViewCheckBoxColumn";
-            this.activeDataGridViewCheckBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.activeDataGridViewCheckBoxColumn.TrueValue = "true";
-            // 
-            // postBindingSource
-            // 
-            this.postBindingSource.AllowNew = true;
-            this.postBindingSource.DataSource = typeof(EtsyRobot.Storage.Model.Post);
-            this.postBindingSource.Sort = "";
-            // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            // 
-            // urlDataGridViewTextBoxColumn1
-            // 
-            this.urlDataGridViewTextBoxColumn1.DataPropertyName = "Url";
-            this.urlDataGridViewTextBoxColumn1.HeaderText = "Url";
-            this.urlDataGridViewTextBoxColumn1.Name = "urlDataGridViewTextBoxColumn1";
-            this.urlDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.urlDataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // priorityDataGridViewTextBoxColumn1
-            // 
-            this.priorityDataGridViewTextBoxColumn1.DataPropertyName = "Priority";
-            this.priorityDataGridViewTextBoxColumn1.HeaderText = "Priority";
-            this.priorityDataGridViewTextBoxColumn1.Name = "priorityDataGridViewTextBoxColumn1";
-            this.priorityDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // gameTypeDataGridViewTextBoxColumn1
-            // 
-            this.gameTypeDataGridViewTextBoxColumn1.DataPropertyName = "GameType";
-            this.gameTypeDataGridViewTextBoxColumn1.HeaderText = "GameType";
-            this.gameTypeDataGridViewTextBoxColumn1.Name = "gameTypeDataGridViewTextBoxColumn1";
-            this.gameTypeDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // commentDataGridViewTextBoxColumn1
-            // 
-            this.commentDataGridViewTextBoxColumn1.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn1.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn1.Name = "commentDataGridViewTextBoxColumn1";
-            // 
-            // createdDataGridViewTextBoxColumn1
-            // 
-            this.createdDataGridViewTextBoxColumn1.DataPropertyName = "Created";
-            this.createdDataGridViewTextBoxColumn1.HeaderText = "Created";
-            this.createdDataGridViewTextBoxColumn1.Name = "createdDataGridViewTextBoxColumn1";
-            // 
-            // gameBindingSource
-            // 
-            this.gameBindingSource.DataSource = typeof(EtsyRobot.Storage.Model.Game);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "EtsyUser";
@@ -1125,6 +1080,54 @@
             // 
             this.jobBindingSource.DataSource = typeof(EtsyRobot.Storage.Model.Job);
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // urlDataGridViewTextBoxColumn
+            // 
+            this.urlDataGridViewTextBoxColumn.DataPropertyName = "Url";
+            this.urlDataGridViewTextBoxColumn.HeaderText = "Url";
+            this.urlDataGridViewTextBoxColumn.Name = "urlDataGridViewTextBoxColumn";
+            this.urlDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // priorityDataGridViewTextBoxColumn
+            // 
+            this.priorityDataGridViewTextBoxColumn.DataPropertyName = "Priority";
+            this.priorityDataGridViewTextBoxColumn.HeaderText = "Priority";
+            this.priorityDataGridViewTextBoxColumn.Name = "priorityDataGridViewTextBoxColumn";
+            this.priorityDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            this.commentDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // createdDataGridViewTextBoxColumn
+            // 
+            this.createdDataGridViewTextBoxColumn.DataPropertyName = "Created";
+            this.createdDataGridViewTextBoxColumn.HeaderText = "Created";
+            this.createdDataGridViewTextBoxColumn.Name = "createdDataGridViewTextBoxColumn";
+            this.createdDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // gameTypeDataGridViewTextBoxColumn
+            // 
+            this.gameTypeDataGridViewTextBoxColumn.DataPropertyName = "GameType";
+            this.gameTypeDataGridViewTextBoxColumn.HeaderText = "GameType";
+            this.gameTypeDataGridViewTextBoxColumn.Name = "gameTypeDataGridViewTextBoxColumn";
+            this.gameTypeDataGridViewTextBoxColumn.Width = 86;
+            // 
+            // directorySearcher1
+            // 
+            this.directorySearcher1.ClientTimeout = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerPageTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            this.directorySearcher1.ServerTimeLimit = System.TimeSpan.Parse("-00:00:01");
+            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1140,6 +1143,8 @@
             this.tabControlMain.ResumeLayout(false);
             this.tabPosts.ResumeLayout(false);
             this.tabPosts.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.postDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.postsNavigator)).EndInit();
             this.postsNavigator.ResumeLayout(false);
             this.postsNavigator.PerformLayout();
@@ -1148,6 +1153,7 @@
             this.tabGames.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gameDataView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gamesNavigator)).EndInit();
             this.gamesNavigator.ResumeLayout(false);
             this.gamesNavigator.PerformLayout();
@@ -1158,9 +1164,6 @@
             this.jobsNavigator.PerformLayout();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.jobDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gameBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1261,11 +1264,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn createdDataGridViewTextBoxColumn1;
         private System.Windows.Forms.ToolStripButton postsBindingRefresh;
         private ADGV.AdvancedDataGridView postDataGridView;
+        private System.DirectoryServices.DirectorySearcher directorySearcher1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn postAndUrlDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priorityDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activeDataGridViewCheckBoxColumn;
-        private System.DirectoryServices.DirectorySearcher directorySearcher1;
     }
 }
 

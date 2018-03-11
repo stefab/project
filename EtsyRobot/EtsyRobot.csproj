@@ -194,6 +194,7 @@
     <Compile Include="Storage\Model\Workload.cs" />
     <Compile Include="Storage\Model\WorkloadItem.cs" />
     <Compile Include="Storage\ObservableListSource.cs" />
+    <Compile Include="Worker\GameFinderHandler.cs" />
     <Compile Include="Worker\JobHandler.cs" />
     <Compile Include="Worker\JobProducer.cs" />
     <Compile Include="Worker\Program.cs" />

@@ -12,9 +12,22 @@ using EtsyRobot.Storage.Model;
 using System.Text.RegularExpressions;
 using EtsyRobot.Storage.Infrastructure;
 using System.Data.Entity;
+ 
 
 namespace EtsyRobot
 {
+    //public class Utils2
+    //{
+    //    myBindingSource.DataSource = (from m in context.myTable
+    //                          where m.PROPERTY MEETS CONDITION
+    //                          select m).ToList<TYPE>();
+    //    // extension method
+    //    public static IEnumerable<T> Filter<T>(this IEnumerable<T> list, Func<T, bool> filterParam)
+    //    {
+    //        return list.Where(filterParam);
+    //    }
+    //}
+    
 
     public partial class MainFrm : Form
     {
@@ -28,6 +41,7 @@ namespace EtsyRobot
             //gameTypeDataGridViewColumn.DisplayMember = "Name";
             //gameTypeDataGridViewColumn.ValueMember = "Value";
             _dbContext = new CoreContext();
+            //DataSet
             
         }
 
@@ -41,7 +55,9 @@ namespace EtsyRobot
         {
             _dbContext.Games.Load();
             _dbContext.Posts.Load();
-            postBindingSource.DataSource = _dbContext.Posts.Local;
+            //DataView 
+            //DataTable postsTable = new DataTable();
+            postBindingSource.DataSource = _dbContext.Posts.Local.ToBindingList();
         }
 
         private void btnTestClick(object sender, EventArgs e)
@@ -74,8 +90,6 @@ namespace EtsyRobot
 
             // init db
             // Data Source="P:\var\EtsyRobot\etsy_robot.db;Version=3;Journal Mode=Persist;"
-
-
             GameHandler handler = new GameHandler(true); //JobHandler.CreateGameHandler();
             Job job =  Job.Create("https://www.etsy.com/teams");
             job.EtsyUser = @"Alegraflowers";
@@ -86,7 +100,6 @@ namespace EtsyRobot
         
         private void btnAddPosts_Click(object sender, EventArgs e)
         {
-
             foreach (string postStr in edPosts.Lines)
             {
                 Console.WriteLine(postStr.Trim());
@@ -102,7 +115,7 @@ namespace EtsyRobot
             //postBindingSource.DataSource = null;
             postBindingSource.ResetBindings(true);
             //postBindingSource.DataSource = _dbContext.Posts.Local;
-            //postBindingSource.
+
             postDataGridView.Update();
             postDataGridView.Refresh();
         }
@@ -126,19 +139,46 @@ namespace EtsyRobot
 
         private void postDataGridView_SortStringChanged(object sender, EventArgs e)
         {
-            //postDataGridView
             postBindingSource.Sort = postDataGridView.SortString;
-            postBindingSource.ResetBindings(true);
         }
 
         private void postDataGridView_FilterStringChanged(object sender, EventArgs e)
         {
-            //postBindingSource.Filter = postDataGridView.FilterString;
-            postBindingSource.Sort = "PostAndUrl";
-            postBindingSource.ResetBindings(true);
+            //postBindingSource.SupportsFiltering
+            postBindingSource.Filter = postDataGridView.FilterString;
+            //if (string.IsNullOrEmpty(this.postDataGridView.FilterString))
+            //{
+            //    this.postBindingSource.DataSource = _dbContext.Posts.Local.ToBindingList();
+            //}
+            //else
+            //{
+            //    var filteredData = _dbContext.Posts.Local.Where(x => x.PostAndUrl.Contains("g"));
+            //    this.postBindingSource.DataSource = filteredData;
+            //}
 
-            postDataGridView.Update();
-            postDataGridView.Refresh();
+            //postBindingSource.ResetBindings(true);
+
+            //  postDataGridView.Update();
+            //  postDataGridView.Refresh();
+        }
+
+        private void gameBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnFindGames_Click(object sender, EventArgs e)
+        {
+            GameFinderHandler handler = new GameFinderHandler(); 
+            Job job = Job.Create("https://www.etsy.com/teams");
+            job.EtsyUser = @"Alegraflowers";
+            job.Password = @"konfetka39";
+            handler.Handle(job);
         }
     }
 }
