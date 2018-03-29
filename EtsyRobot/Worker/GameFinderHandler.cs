@@ -14,6 +14,7 @@ using System.Threading;
 using EtsyRobot.Engine.WebSession;
 using EtsyRobot.Storage.Model;
 using EtsyRobot.Engine.WebSession.EtsyUtils;
+using EtsyRobot.Storage.Model;
 
 namespace EtsyRobot.Worker
 {
@@ -22,6 +23,21 @@ namespace EtsyRobot.Worker
         static public string getWorkerName()
         {
             return System.Environment.MachineName + ", " + System.Environment.OSVersion;
+        }
+
+        List<Game> Games = new List<Game>();
+        
+        public async Task<IList<Game>> HandleTaskAsync(Job job)
+        {
+            Games.Clear();
+            await Task.Run(() => Handle(job));
+            // .ContinueWith(
+            //  t => { Console.WriteLine(@"Comparison worker exited with exception: {0}", t.Exception); 
+            //    Environment.Exit(2);
+            //   },
+            //    TaskContinuationOptions.OnlyOnFaulted);
+            Games.Add(new Game());
+            return Games;
         }
 
         public override void Handle(Job job)
@@ -43,7 +59,6 @@ namespace EtsyRobot.Worker
                     EtsyStrategy strategy = new EtsyGameStrategy(job);
                     session.ProcessJob(strategy);
                     //strategy.process()
-
                 }
                 finally
                 {

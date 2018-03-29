@@ -12,6 +12,8 @@ using EtsyRobot.Storage.Model;
 using System.Text.RegularExpressions;
 using EtsyRobot.Storage.Infrastructure;
 using System.Data.Entity;
+using NLog;
+using System.Diagnostics;
  
 
 namespace EtsyRobot
@@ -32,6 +34,8 @@ namespace EtsyRobot
     public partial class MainFrm : Form
     {
         private CoreContext _dbContext;
+        static private readonly Logger _log = LogManager.GetLogger("MainFrm");
+        static private readonly TraceSource _tracer = new TraceSource("EtsyRobot.MainFrm", SourceLevels.All);
 
         public MainFrm()
         {
@@ -172,13 +176,23 @@ namespace EtsyRobot
 
         }
 
-        private void btnFindGames_Click(object sender, EventArgs e)
+        private  async void btnFindGames_Click(object sender, EventArgs e)
         {
             GameFinderHandler handler = new GameFinderHandler(); 
             Job job = Job.Create("https://www.etsy.com/teams");
             job.EtsyUser = @"Alegraflowers";
             job.Password = @"konfetka39";
-            handler.Handle(job);
+            //handler.Handle(job);
+            try
+            {
+                var lst = await handler.HandleTaskAsync(job);
+                _log.Debug("find games {0}", lst.Count());
+            }
+            catch(Exception ex)
+            {
+                _log.Debug("find games Error {0}", ex.Message);
+            }
+            
         }
     }
 }

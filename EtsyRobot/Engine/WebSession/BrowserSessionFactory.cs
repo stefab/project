@@ -83,12 +83,13 @@ namespace EtsyRobot.Engine.WebSession
             //opt.AddAdditionalCapability(CapabilityType.AcceptSslCertificates, true);
             //opt.AddAdditionalCapability(CapabilityType.IsJavaScriptEnabled, true);
             //opt.AddAdditionalCapability(CapabilityType.HasNativeEvents, true);
-            // opt.SetPreference("webdriver.firefox.profile", "ff_etsy");
+            //opt.SetPreference("webdriver.firefox.profile", "ff_etsy");
             //var webDriver = new FirefoxDriver(FirefoxDriverService.CreateDefaultService(), opt, TimeSpan.FromSeconds(settings.CommandTimeout));
             var webDriver = new FirefoxDriver(opt);
             return new DefaultBrowserSession(webDriver).Configure(settings);
 		}
 
+        static int indx = 0;
 		static private IBrowserSession CreateChromeAdapter(BrowserSettings settings)
 		{
 			var options = new ChromeOptions();
@@ -96,14 +97,16 @@ namespace EtsyRobot.Engine.WebSession
             //options.AddArgument("disable-popup-blocking");
             options.AddArgument("disable-3d-apis");
             options.AddArgument("disable-gpu");
-            string pathToCurrentUserProfiles = Environment.ExpandEnvironmentVariables("%TEMP%") + @"\chrome_selenium_etsy";
+            // chrome_options.add_argument("--profile-directory=Profile1")
+            string pathToCurrentUserProfiles = Environment.ExpandEnvironmentVariables("%TEMP%") + @"\chrome_selenium_etsy"; // + indx.ToString();
+
+            indx++;
             options.AddArgument("user-data-dir=" + pathToCurrentUserProfiles);
             if (settings.PluginFileName != null)
 			{
                 options.AddExtension(settings.PluginFileName);
 			}
             options.AddArgument("sidfordelete=" + new Random().Next());
-
 			var webDriver = CustomChromeDriver.Build(options, TimeSpan.FromSeconds(settings.CommandTimeout));
             return new ChromeBrowserSession(webDriver).Configure(settings);
 		}

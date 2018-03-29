@@ -164,41 +164,46 @@
             this.panel1.Controls.Add(this.edPassword);
             this.panel1.Controls.Add(this.lbPassword);
             this.panel1.Controls.Add(this.lbLogin);
-            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Location = new System.Drawing.Point(4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 53);
+            this.panel1.Size = new System.Drawing.Size(267, 65);
             this.panel1.TabIndex = 0;
             // 
             // edLogin
             // 
-            this.edLogin.Location = new System.Drawing.Point(64, 4);
+            this.edLogin.Location = new System.Drawing.Point(85, 5);
+            this.edLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edLogin.Name = "edLogin";
-            this.edLogin.Size = new System.Drawing.Size(133, 20);
+            this.edLogin.Size = new System.Drawing.Size(176, 22);
             this.edLogin.TabIndex = 3;
             // 
             // edPassword
             // 
-            this.edPassword.Location = new System.Drawing.Point(64, 28);
+            this.edPassword.Location = new System.Drawing.Point(85, 34);
+            this.edPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.edPassword.Name = "edPassword";
-            this.edPassword.Size = new System.Drawing.Size(133, 20);
+            this.edPassword.Size = new System.Drawing.Size(176, 22);
             this.edPassword.TabIndex = 2;
             this.edPassword.UseSystemPasswordChar = true;
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(4, 31);
+            this.lbPassword.Location = new System.Drawing.Point(5, 38);
+            this.lbPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(53, 13);
+            this.lbPassword.Size = new System.Drawing.Size(69, 17);
             this.lbPassword.TabIndex = 1;
             this.lbPassword.Text = "Password";
             // 
             // lbLogin
             // 
             this.lbLogin.AutoSize = true;
-            this.lbLogin.Location = new System.Drawing.Point(4, 7);
+            this.lbLogin.Location = new System.Drawing.Point(5, 9);
+            this.lbLogin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(33, 13);
+            this.lbLogin.Size = new System.Drawing.Size(43, 17);
             this.lbLogin.TabIndex = 0;
             this.lbLogin.Text = "Label";
             // 
@@ -212,11 +217,12 @@
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.GrowStyle = System.Windows.Forms.TableLayoutPanelGrowStyle.FixedSize;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(821, 589);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1095, 725);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tabControlMain
@@ -225,12 +231,12 @@
             this.tabControlMain.Controls.Add(this.tabGames);
             this.tabControlMain.Controls.Add(this.tabJobs);
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlMain.Location = new System.Drawing.Point(2, 61);
-            this.tabControlMain.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControlMain.Location = new System.Drawing.Point(3, 75);
+            this.tabControlMain.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControlMain.Multiline = true;
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(817, 526);
+            this.tabControlMain.Size = new System.Drawing.Size(1089, 648);
             this.tabControlMain.TabIndex = 6;
             // 
             // tabPosts
@@ -240,11 +246,11 @@
             this.tabPosts.Controls.Add(this.postsNavigator);
             this.tabPosts.Controls.Add(this.edPosts);
             this.tabPosts.Controls.Add(this.panel2);
-            this.tabPosts.Location = new System.Drawing.Point(4, 22);
-            this.tabPosts.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPosts.Location = new System.Drawing.Point(4, 25);
+            this.tabPosts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPosts.Name = "tabPosts";
-            this.tabPosts.Padding = new System.Windows.Forms.Padding(2);
-            this.tabPosts.Size = new System.Drawing.Size(809, 500);
+            this.tabPosts.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabPosts.Size = new System.Drawing.Size(1081, 619);
             this.tabPosts.TabIndex = 2;
             this.tabPosts.Text = "Posts/Products";
             // 
@@ -264,9 +270,10 @@
             this.activeDataGridViewCheckBoxColumn});
             this.postDataGridView.DataSource = this.postBindingSource;
             this.postDataGridView.DateWithTime = false;
-            this.postDataGridView.Location = new System.Drawing.Point(2, 32);
+            this.postDataGridView.Location = new System.Drawing.Point(3, 39);
+            this.postDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.postDataGridView.Name = "postDataGridView";
-            this.postDataGridView.Size = new System.Drawing.Size(805, 323);
+            this.postDataGridView.Size = new System.Drawing.Size(1073, 399);
             this.postDataGridView.TabIndex = 9;
             this.postDataGridView.TimeFilter = false;
             this.postDataGridView.SortStringChanged += new System.EventHandler(this.postDataGridView_SortStringChanged);
@@ -337,14 +344,14 @@
             this.bindingNavigatorDeleteItem,
             this.postsBindingNavigatorSaveItem,
             this.postsBindingRefresh});
-            this.postsNavigator.Location = new System.Drawing.Point(2, 2);
+            this.postsNavigator.Location = new System.Drawing.Point(3, 2);
             this.postsNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.postsNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.postsNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.postsNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.postsNavigator.Name = "postsNavigator";
             this.postsNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.postsNavigator.Size = new System.Drawing.Size(805, 27);
+            this.postsNavigator.Size = new System.Drawing.Size(1075, 27);
             this.postsNavigator.TabIndex = 7;
             this.postsNavigator.Text = "bindingNavigator1";
             // 
@@ -360,7 +367,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -401,7 +408,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(49, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
@@ -464,11 +471,11 @@
             // edPosts
             // 
             this.edPosts.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.edPosts.Location = new System.Drawing.Point(2, 360);
-            this.edPosts.Margin = new System.Windows.Forms.Padding(2);
+            this.edPosts.Location = new System.Drawing.Point(3, 448);
+            this.edPosts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.edPosts.Multiline = true;
             this.edPosts.Name = "edPosts";
-            this.edPosts.Size = new System.Drawing.Size(805, 107);
+            this.edPosts.Size = new System.Drawing.Size(1075, 131);
             this.edPosts.TabIndex = 6;
             // 
             // panel2
@@ -477,19 +484,19 @@
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.btnAddPosts);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(2, 467);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(3, 579);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(805, 31);
+            this.panel2.Size = new System.Drawing.Size(1075, 38);
             this.panel2.TabIndex = 5;
             // 
             // btnAddPosts
             // 
             this.btnAddPosts.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnAddPosts.Location = new System.Drawing.Point(0, 0);
-            this.btnAddPosts.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddPosts.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddPosts.Name = "btnAddPosts";
-            this.btnAddPosts.Size = new System.Drawing.Size(79, 31);
+            this.btnAddPosts.Size = new System.Drawing.Size(105, 38);
             this.btnAddPosts.TabIndex = 0;
             this.btnAddPosts.Text = "Add posts";
             this.btnAddPosts.UseVisualStyleBackColor = true;
@@ -502,11 +509,11 @@
             this.tabGames.Controls.Add(this.panel3);
             this.tabGames.Controls.Add(this.gameDataView);
             this.tabGames.Controls.Add(this.gamesNavigator);
-            this.tabGames.Location = new System.Drawing.Point(4, 22);
-            this.tabGames.Margin = new System.Windows.Forms.Padding(2);
+            this.tabGames.Location = new System.Drawing.Point(4, 25);
+            this.tabGames.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabGames.Name = "tabGames";
-            this.tabGames.Padding = new System.Windows.Forms.Padding(2);
-            this.tabGames.Size = new System.Drawing.Size(809, 500);
+            this.tabGames.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabGames.Size = new System.Drawing.Size(1081, 619);
             this.tabGames.TabIndex = 0;
             this.tabGames.Text = "Games";
             // 
@@ -516,19 +523,19 @@
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Controls.Add(this.btnFindGames);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(2, 467);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(3, 579);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(805, 31);
+            this.panel3.Size = new System.Drawing.Size(1075, 38);
             this.panel3.TabIndex = 4;
             // 
             // btnFindGames
             // 
             this.btnFindGames.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnFindGames.Location = new System.Drawing.Point(0, 0);
-            this.btnFindGames.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFindGames.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnFindGames.Name = "btnFindGames";
-            this.btnFindGames.Size = new System.Drawing.Size(79, 31);
+            this.btnFindGames.Size = new System.Drawing.Size(105, 38);
             this.btnFindGames.TabIndex = 0;
             this.btnFindGames.Text = "Find games";
             this.btnFindGames.UseVisualStyleBackColor = true;
@@ -567,8 +574,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gameDataView.DefaultCellStyle = dataGridViewCellStyle2;
-            this.gameDataView.Location = new System.Drawing.Point(2, 31);
-            this.gameDataView.Margin = new System.Windows.Forms.Padding(2);
+            this.gameDataView.Location = new System.Drawing.Point(3, 38);
+            this.gameDataView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gameDataView.Name = "gameDataView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -579,7 +586,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gameDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.gameDataView.RowTemplate.Height = 24;
-            this.gameDataView.Size = new System.Drawing.Size(809, 433);
+            this.gameDataView.Size = new System.Drawing.Size(1079, 534);
             this.gameDataView.TabIndex = 3;
             // 
             // iDDataGridViewTextBoxColumn1
@@ -647,21 +654,21 @@
             this.bindingNavigatorAddNewItem1,
             this.bindingNavigatorDeleteItem1,
             this.toolStripButton1});
-            this.gamesNavigator.Location = new System.Drawing.Point(2, 2);
+            this.gamesNavigator.Location = new System.Drawing.Point(3, 2);
             this.gamesNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.gamesNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem1;
             this.gamesNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem1;
             this.gamesNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.gamesNavigator.Name = "gamesNavigator";
             this.gamesNavigator.PositionItem = this.bindingNavigatorPositionItem1;
-            this.gamesNavigator.Size = new System.Drawing.Size(805, 27);
+            this.gamesNavigator.Size = new System.Drawing.Size(1075, 27);
             this.gamesNavigator.TabIndex = 5;
             this.gamesNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorCountItem1
             // 
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
-            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem1.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem1.Text = "of {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Total number of items";
             // 
@@ -702,7 +709,7 @@
             this.bindingNavigatorPositionItem1.AccessibleName = "Position";
             this.bindingNavigatorPositionItem1.AutoSize = false;
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
-            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(49, 27);
             this.bindingNavigatorPositionItem1.Text = "0";
             this.bindingNavigatorPositionItem1.ToolTipText = "Current position";
             // 
@@ -749,11 +756,11 @@
             this.tabJobs.Controls.Add(this.jobsNavigator);
             this.tabJobs.Controls.Add(this.panel4);
             this.tabJobs.Controls.Add(this.jobDataGridView);
-            this.tabJobs.Location = new System.Drawing.Point(4, 22);
-            this.tabJobs.Margin = new System.Windows.Forms.Padding(2);
+            this.tabJobs.Location = new System.Drawing.Point(4, 25);
+            this.tabJobs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabJobs.Name = "tabJobs";
-            this.tabJobs.Padding = new System.Windows.Forms.Padding(2);
-            this.tabJobs.Size = new System.Drawing.Size(809, 500);
+            this.tabJobs.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tabJobs.Size = new System.Drawing.Size(1081, 619);
             this.tabJobs.TabIndex = 1;
             this.tabJobs.Text = "Jobs";
             // 
@@ -775,14 +782,14 @@
             this.bindingNavigatorSeparator8,
             this.bindingNavigatorAddNewItem2,
             this.bindingNavigatorDeleteItem2});
-            this.jobsNavigator.Location = new System.Drawing.Point(2, 2);
+            this.jobsNavigator.Location = new System.Drawing.Point(3, 2);
             this.jobsNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem2;
             this.jobsNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem2;
             this.jobsNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem2;
             this.jobsNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem2;
             this.jobsNavigator.Name = "jobsNavigator";
             this.jobsNavigator.PositionItem = this.bindingNavigatorPositionItem2;
-            this.jobsNavigator.Size = new System.Drawing.Size(805, 27);
+            this.jobsNavigator.Size = new System.Drawing.Size(1075, 27);
             this.jobsNavigator.TabIndex = 3;
             this.jobsNavigator.Text = "jobsBindingNavigator";
             // 
@@ -798,7 +805,7 @@
             // bindingNavigatorCountItem2
             // 
             this.bindingNavigatorCountItem2.Name = "bindingNavigatorCountItem2";
-            this.bindingNavigatorCountItem2.Size = new System.Drawing.Size(35, 24);
+            this.bindingNavigatorCountItem2.Size = new System.Drawing.Size(45, 24);
             this.bindingNavigatorCountItem2.Text = "of {0}";
             this.bindingNavigatorCountItem2.ToolTipText = "Total number of items";
             // 
@@ -839,7 +846,7 @@
             this.bindingNavigatorPositionItem2.AccessibleName = "Position";
             this.bindingNavigatorPositionItem2.AutoSize = false;
             this.bindingNavigatorPositionItem2.Name = "bindingNavigatorPositionItem2";
-            this.bindingNavigatorPositionItem2.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem2.Size = new System.Drawing.Size(49, 27);
             this.bindingNavigatorPositionItem2.Text = "0";
             this.bindingNavigatorPositionItem2.ToolTipText = "Current position";
             // 
@@ -877,19 +884,19 @@
             this.panel4.BackColor = System.Drawing.SystemColors.Control;
             this.panel4.Controls.Add(this.btnTest);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(2, 467);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
+            this.panel4.Location = new System.Drawing.Point(3, 579);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(805, 31);
+            this.panel4.Size = new System.Drawing.Size(1075, 38);
             this.panel4.TabIndex = 2;
             // 
             // btnTest
             // 
             this.btnTest.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnTest.Location = new System.Drawing.Point(0, 0);
-            this.btnTest.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(66, 31);
+            this.btnTest.Size = new System.Drawing.Size(88, 38);
             this.btnTest.TabIndex = 1;
             this.btnTest.Text = "Test";
             this.btnTest.UseVisualStyleBackColor = true;
@@ -940,8 +947,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.jobDataGridView.DefaultCellStyle = dataGridViewCellStyle5;
-            this.jobDataGridView.Location = new System.Drawing.Point(5, 31);
-            this.jobDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.jobDataGridView.Location = new System.Drawing.Point(7, 38);
+            this.jobDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.jobDataGridView.Name = "jobDataGridView";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
@@ -952,7 +959,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.jobDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.jobDataGridView.RowTemplate.Height = 24;
-            this.jobDataGridView.Size = new System.Drawing.Size(811, 438);
+            this.jobDataGridView.Size = new System.Drawing.Size(1081, 540);
             this.jobDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -1130,10 +1137,11 @@
             // 
             // MainFrm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 589);
+            this.ClientSize = new System.Drawing.Size(1095, 725);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainFrm";
             this.RightToLeftLayout = true;
             this.Text = "Robotenok";

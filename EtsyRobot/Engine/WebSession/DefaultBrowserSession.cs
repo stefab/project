@@ -125,18 +125,41 @@ namespace EtsyRobot.Engine.WebSession
         public ReadOnlyCollection<IWebElement> FindElements(By by, bool waitVisible=true, int attepms=1, double period=1.0)
         {
             ReadOnlyCollection<IWebElement> elements = null;
+            ReadOnlyCollection<IWebElement> results = new ReadOnlyCollection<IWebElement>(new List<IWebElement>());
             bool flFind = false;
             do
             {
                 --attepms;
                 elements = _webDriver.FindElements(by);
-                elements.FirstOrDefault();
-                flFind = (elements.Count > 0) && (!waitVisible || elements.FirstOrDefault().Displayed);
+                //
+                if (waitVisible)
+                {
+                    foreach (IWebElement elem in elements)
+                    { 
+                        if (elem.Displayed)
+                        {
+                            flFind = true;
+                            break;
+                        }
+                    }
+                    if (flFind)
+                    {
+                        results = new ReadOnlyCollection<IWebElement>(elements.Where(e => e.Displayed).ToList());
+                    }
+                }
+                else
+                {
+                    flFind = (elements.Count > 0);
+                    if (flFind)
+                        results = elements;
+                }
+                // elements.FirstOrDefault();
+                // flFind = (elements.Count > 0) && (!waitVisible || elements.FirstOrDefault().Displayed);
                 if (!flFind)
                     Thread.Sleep(TimeSpan.FromSeconds(period));
             }
-            while (!flFind && attepms > 0 );
-            return elements;
+            while (!flFind && attepms > 0);
+            return results;
         }
 
     protected int[,] createLayoutTable(int height, int width) {

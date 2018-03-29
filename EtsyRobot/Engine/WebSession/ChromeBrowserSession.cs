@@ -20,6 +20,11 @@ namespace EtsyRobot.Engine.WebSession
             base.ConfigureWindowSize(settings);
 		}
 
+        protected void saveCoockies()
+        {
+            //WebDriver.Manage().Cookies.AllCookie
+        }
+
 		public override Image GetScreenshot()
 		{
 			//Thread.Sleep(2000);

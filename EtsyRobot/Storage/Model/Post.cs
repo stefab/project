@@ -27,8 +27,6 @@ namespace EtsyRobot.Storage.Model
         [Required]
         public int Priority { get; set; } = 1;
         [Required]
-        public uint Priority2 { get; set; } = 1;
-        [Required]
         public bool Active { get; set; } = true;
     }
 }

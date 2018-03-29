@@ -10,6 +10,7 @@ using System.Management;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System.Reflection;
+using System.Threading;
 
 namespace EtsyRobot.Engine.WebSession
 {
@@ -18,21 +19,77 @@ namespace EtsyRobot.Engine.WebSession
         private static Object _buildLock = new Object();
 
         protected int driverPid = -1;
-        public static CustomChromeDriver Build(ChromeOptions profile, TimeSpan commandTimeout)
+        public static CustomChromeDriver BuildOld(ChromeOptions profile, TimeSpan commandTimeout)
         {
             CustomChromeDriver driver = null;
-            lock (_buildLock) {
-            // catch and story chromedriver pid
+            bool lockWasTaken = false;
+            try {
+                Monitor.TryEnter(_buildLock, TimeSpan.FromSeconds(5).Milliseconds, ref lockWasTaken); {
+                // catch and story chromedriver pid
                 IList<int> pidsBefore = getProcessDrivers(Process.GetCurrentProcess().Id);
                 driver = new CustomChromeDriver(profile, commandTimeout);
                 IList<int> pidsAfter = getProcessDrivers(Process.GetCurrentProcess().Id);
                 IList<int> rest = pidsAfter.Except(pidsBefore).ToList();
                 driver.driverPid = rest.DefaultIfEmpty(-1).First();
+                }
             }
+            finally {
+                if (lockWasTaken) Monitor.Exit(_buildLock);
+            }
+            return driver;
+
+            //CustomChromeDriver driver = null;
+            //lock (_buildLock) {
+            //    // catch and story chromedriver pid
+            //    IList<int> pidsBefore = getProcessDrivers(Process.GetCurrentProcess().Id);
+            //    driver = new CustomChromeDriver(profile, commandTimeout);
+            //    IList<int> pidsAfter = getProcessDrivers(Process.GetCurrentProcess().Id);
+            //    IList<int> rest = pidsAfter.Except(pidsBefore).ToList();
+            //    driver.driverPid = rest.DefaultIfEmpty(-1).First();
+            //}
+            //return driver;
+        }
+        public static CustomChromeDriver Build(ChromeOptions profile, TimeSpan commandTimeout)
+        {
+            CustomChromeDriver driver = null;
+            ChromeDriverService service = ChromeDriverService.CreateDefaultService();
+            service.SuppressInitialDiagnosticInformation = false;
+            var result = Task.Factory.StartNew(() => {
+                CustomChromeDriver drv = null;
+                try
+                {
+                    drv = new CustomChromeDriver(service, profile, commandTimeout);
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Can not create driver: " + ex.Message);
+                }
+                return drv;
+            });
+
+            if(result.Wait(TimeSpan.FromSeconds(15)))
+            {
+                driver = result.Result;
+                driver.driverPid = service.ProcessId;
+            }
+            else
+            {
+                if (service.ProcessId > 0)
+                {
+                    KillProcessAndChildren(service.ProcessId);
+                }
+            }
+            //driver = new CustomChromeDriver(service, profile, commandTimeout);
             return driver;
         }
 
         protected CustomChromeDriver(ChromeOptions profile, TimeSpan commandTimeout) : base(ChromeDriverService.CreateDefaultService(), profile, commandTimeout)
+        {
+            //this.Manage().Timeouts().ImplicitWait = commandTimeout;// svt2 //SetScriptTimeout(commandTimeout);
+        }
+
+        protected CustomChromeDriver(ChromeDriverService service, ChromeOptions profile, TimeSpan commandTimeout) : 
+            base(service, profile, commandTimeout)
         {
             //this.Manage().Timeouts().ImplicitWait = commandTimeout;// svt2 //SetScriptTimeout(commandTimeout);
         }
